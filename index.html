@@ -25,11 +25,19 @@
     *,*::before,*::after{box-sizing:border-box}
     html,body{height:100%}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:
-      radial-gradient(1200px 800px at -10% -10%, rgba(126,240,193,.12), transparent 55%),
-      radial-gradient(900px 700px at 110% -10%, rgba(106,160,255,.12), transparent 55%),
-      linear-gradient(180deg,var(--bg),var(--bg-2));
-      color:var(--ink);}
+    html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    html{ background-color: var(--bg-2); }
+    .headline { text-wrap: balance; }  /* prettier multi-line titles */
+    .lead { text-wrap: pretty; }
+    body{  
+        margin:0;
+        font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+        background:
+            radial-gradient(1200px 800px at -10% -10%, rgba(126,240,193,.12), transparent 55%),
+            radial-gradient(900px 700px at 110% -10%, rgba(106,160,255,.12), transparent 55%),
+            linear-gradient(180deg,var(--bg),var(--bg-2));
+        color:var(--ink);
+    }
 
     /* Decorative blurred blobs */
     .bg-blur{position:fixed; inset:auto -200px -200px auto; width:480px; height:480px; background:radial-gradient(circle at 30% 30%, var(--brand), transparent 60%); filter:blur(60px); opacity:.35; pointer-events:none; z-index:-1}
@@ -61,11 +69,76 @@
 
     /* Photo card */
     .photo-card{position:relative; display:grid; place-items:center; padding:26px}
-    .photo-ring{position:relative; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle at 30% 30%, rgba(126,240,193,.3), rgba(106,160,255,.18)); border:1px solid var(--border); box-shadow: inset 0 0 0 10px rgba(255,255,255,.02), 0 20px 40px rgba(0,0,0,.25)}
-    .photo-ring::after{content:""; position:absolute; inset:-10px; border-radius:50%; background:conic-gradient(from 0deg, var(--brand), var(--brand-2), var(--brand)); filter:blur(18px); opacity:.35; z-index:-1}
-    .photo{position:absolute; inset:12px; border-radius:50%; overflow:hidden; display:grid; place-items:center; background:linear-gradient(180deg, #0e162f, #0b1020)}
-    .photo svg{width:100%; height:100%}
-    .photo small{position:absolute; bottom:10px; background:rgba(255,255,255,.1); backdrop-filter:blur(6px); padding:.25rem .5rem; border-radius:999px; font-weight:600}
+
+    /* keep the ring perfectly circular */
+    :root { --ring-size: 260px; --ring-inset: 12px; }
+
+    .photo-ring{
+    position:relative;
+    width: var(--ring-size);
+    aspect-ratio: 1 / 1;               /* <- ensures a square */
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(126,240,193,.3), rgba(106,160,255,.18));
+    border:1px solid var(--border);
+    box-shadow: inset 0 0 0 10px rgba(255,255,255,.02), 0 20px 40px rgba(0,0,0,.25);
+    }
+    .photo-ring::after{
+    content:""; position:absolute; inset:-10px; border-radius:50%;
+    background:conic-gradient(from 0deg, var(--brand), var(--brand-2), var(--brand));
+    filter:blur(18px); opacity:.35; z-index:-1;
+    }
+
+    /* photo fills the ring */
+    .photo{
+    position:absolute; inset: var(--ring-inset);
+    border-radius:50%; overflow:hidden;
+    display:grid; place-items:center;
+    background:linear-gradient(180deg, #0e162f, #0b1020);
+    }
+
+    /* actual image */
+    .photo img{
+    width:100%; height:100%;
+    object-fit:cover; display:block;
+    }
+    /* Subtle, smooth background glow */
+    :root { 
+    --glow-opacity: .10;      /* lower = subtler (try .10 or .08) */
+    --glow-blur: 120px;       /* higher = smoother */
+    --glow-inset: -70px;      /* how far the glow extends beyond the ring */
+    }
+
+    .photo-card{ position:relative; isolation:isolate; }
+
+    .photo-card::before{
+    content:"";
+    position:absolute;
+    inset: var(--glow-inset);
+    border-radius:50%;
+    background:
+        radial-gradient(52% 52% at 50% 55%, var(--brand) 0%, transparent 60%),
+        radial-gradient(52% 52% at 50% 45%, var(--brand-2) 0%, transparent 60%);
+    filter: blur(var(--glow-blur));
+    opacity: var(--glow-opacity);
+    mix-blend-mode: soft-light;     /* gentler than 'screen' */
+    z-index:-1;
+
+    /* soft feathering */
+    -webkit-mask-image: radial-gradient(55% 55% at 50% 50%, #000 60%, transparent 85%);
+    mask-image: radial-gradient(55% 55% at 50% 50%, #000 60%, transparent 85%);
+
+    animation: aurora 28s ease-in-out infinite alternate;
+    }
+
+    @keyframes aurora{
+    0%   { transform: translateY(2px) scale(0.995); }
+    100% { transform: translateY(0)   scale(1.005); }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+    .photo-card::before{ animation: none; }
+    }
 
     /* Sections */
     section{padding:22px 0}
@@ -100,6 +173,21 @@
     /* Accessibility */
     .skip a{position:absolute; left:-9999px}
     .skip a:focus{left:12px; top:12px; background:#fff; color:#000; padding:.5rem .75rem; border-radius:10px; z-index:1000}
+
+        /* Keeps content above overlays */
+    .wrap{ position: relative; z-index: 1; }
+
+    /* Soft bottom blend—fixed, overscanned, no tiling seams */
+    .page-bottom-glow{
+    position: fixed;
+    left: -2px; right: -2px; bottom: -2px;   /* overscan edges */
+    height: 45vh;                             /* how tall the blend feels */
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(1200px 700px at 50% 120%, rgba(126,240,193,.08), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,.03));
+    }
   </style>
 </head>
 <body>
@@ -122,21 +210,16 @@
         <div class="hero-inner grid">
           <!-- PHOTO FIRST (as requested) -->
           <div class="photo-card">
-            <div class="photo-ring"></div>
-            <div class="photo" aria-label="Photo placeholder">
-              <!-- Inline SVG avatar placeholder with initials AP; replace with <img src="yourphoto.jpg" alt="Ashish Puri"/> -->
-              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ashish Puri placeholder">
-                <defs>
-                  <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0%" stop-color="#6aa0ff"/>
-                    <stop offset="100%" stop-color="#7ef0c1"/>
-                  </linearGradient>
-                </defs>
-                <rect width="100" height="100" fill="#0b1020"/>
-                <circle cx="50" cy="50" r="48" fill="url(#g)" opacity=".18"/>
-                <text x="50" y="58" text-anchor="middle" font-size="42" font-family="Inter,system-ui" font-weight="800" fill="#e6edf6">AP</text>
-              </svg>
-              <small>Replace with your photo</small>
+            <div class="photo-ring">
+              <div class="photo" aria-hidden="true">
+                <img
+                  src="/assets/ashish.png"
+                  alt="Portrait of Ashish Puri"
+                  width="600" height="600"
+                  style="width:100%;height:100%;object-fit:cover;display:block;"
+                  loading="eager" decoding="async" fetchpriority="high"
+                />
+              </div>
             </div>
           </div>
 
@@ -191,18 +274,43 @@
       </div>
     </footer>
   </div>
-
   <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // IntersectionObserver to reveal elements
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
-      })
-    }, {threshold: 0.08});
-    document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+    // Helper: same-origin check
+    function sameOrigin(url) {
+      try { return new URL(url, location.href).origin === location.origin; }
+      catch { return false; }
+    }
+  
+    // Run after DOM is ready so elements exist
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1) Start at top on first external visit with a hash (e.g. .../#contact)
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual'; // disable browser auto-restore
+      }
+      const cameFromExternal = !document.referrer || !sameOrigin(document.referrer);
+      if (cameFromExternal && location.hash) {
+        history.replaceState(null, '', location.pathname + location.search);
+        // Defer to ensure layout is ready, then jump to top
+        setTimeout(() => window.scrollTo(0, 0), 0);
+      }
+  
+      // 2) Year stamp (skip if element is missing)
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+  
+      // 3) Reveal animations (fallback if IO unsupported)
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+          });
+        }, { threshold: 0.08 });
+        reveals.forEach(el => io.observe(el));
+      } else {
+        reveals.forEach(el => el.classList.add('on'));
+      }
+    });
   </script>
 </body>
 </html>
