@@ -740,7 +740,18 @@
       transform: translateY(-4px);
       transition: opacity .22s ease, transform .22s ease, box-shadow .22s ease;
       background: rgba(255, 255, 255, .04);
-      pointer-events: none;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    /* Keep arrow visible on touch when open + reverse direction */
+    .card.impact-switch[data-open="true"] .hover-arrow {
+      opacity: .9;
+      transform: translateY(0);
+    }
+
+    .card.impact-switch[data-open="true"] .hover-arrow::before {
+      transform: rotate(135deg);
     }
 
     .hover-arrow::before {
@@ -1148,6 +1159,7 @@
         const impact = card.querySelector('.pane.impact');
         const toggle = card.querySelector('.card-toggle');
         const title = card.querySelector('.proj-head');
+        const arrow = card.querySelector('.hover-arrow');
         if (!body || !summary || !impact || !toggle) return;
 
         // Initial lock
@@ -1169,6 +1181,11 @@
             summary.classList.add('hide');
             card.dataset.open = 'true';
           }
+          if (arrow) {
+            const open = card.dataset.open === 'true';
+            arrow.setAttribute('aria-label', open ? 'Back to summary' :
+              'Show business impact');
+          }
         }
 
         toggle.addEventListener('click', toggleOpen);
@@ -1179,6 +1196,15 @@
         card.addEventListener('keydown', (e) => {
           if (e.key === 'Escape' && card.dataset.open === 'true') toggleOpen();
         });
+        if (arrow) {
+          arrow.addEventListener('click', toggleOpen);
+          arrow.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleOpen();
+            }
+          });
+        }
 
         // Recalculate when layout/Fonts change
         const ro = new ResizeObserver(() => setMaxHeight(card));
