@@ -725,6 +725,19 @@
       /* contain scroller */
     }
 
+    /* Summary gets the same shell as impact for perfect alignment */
+    .summary-panel {
+      height: 100%;
+      box-sizing: border-box;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
     /* Hover cue: subtle arrow only on hover-capable devices */
     .hover-arrow {
       position: absolute;
@@ -892,6 +905,14 @@
       margin: 0 0 10px;
     }
 
+    .subhead {
+      font-size: .8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin: 0 0 8px;
+    }
+
   </style>
 </head>
 
@@ -969,6 +990,7 @@
               <!-- IMPACT (hidden initially) -->
               <div class="pane impact">
                 <div class="impact-panel">
+                  <div class="subhead">Business impact</div>
                   <div class="kpi-scroller" role="list">
                     <div class="kpi" role="listitem">
                       <div class="label">On-time deliveries</div>
