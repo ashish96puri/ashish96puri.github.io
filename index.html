@@ -549,13 +549,10 @@
       left: -2px;
       right: -2px;
       bottom: -2px;
-      /* overscan edges */
       height: 45vh;
-      /* how tall the blend feels */
       pointer-events: none;
       z-index: 0;
-      background:
-        radial-gradient(1200px 700px at 50% 120%, rgba(126, 240, 193, .08), transparent 60%),
+      background: radial-gradient(1200px 700px at 50% 120%, rgba(126, 240, 193, .08), transparent 60%),
         linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .03));
     }
 
@@ -624,7 +621,6 @@
       opacity: 1
     }
 
-    /* Optional: if a black logo disappears in dark mode, invert it there */
     @media (prefers-color-scheme: dark) {
       .logo .invert-dark {
         filter: invert(1) grayscale(1) contrast(1.05);
@@ -636,11 +632,7 @@
       color-scheme: dark;
     }
 
-    /* keep form controls styled for dark */
-
     @media (prefers-color-scheme: light) {
-
-      /* Re-apply dark tokens even if OS prefers light */
       :root {
         --bg: #0b1020;
         --bg-2: #0d1226;
@@ -653,6 +645,273 @@
         --brand-2: #6aa0ff;
         --ring: rgba(106, 160, 255, .35);
       }
+    }
+
+    /* ===================== */
+    /* INTERACTIVE PROJECTS  */
+    /* ===================== */
+
+    /* Danger color for MAE down */
+    :root {
+      --danger: #ff6b6b;
+      --danger-bg: rgba(255, 107, 107, .12);
+      --danger-ring: rgba(255, 107, 107, .35);
+    }
+
+    /* Lock content area and overlay panes (no height jump, no overflow) */
+    .card.impact-switch {
+      position: relative;
+      overflow: visible;
+    }
+
+    .card.impact-switch .proj-head {
+      margin: .4rem 0 .2rem;
+    }
+
+    .switch-body {
+      position: relative;
+      overflow: hidden;
+      height: var(--panel-h, auto);
+    }
+
+    /* Overlay the panes so they REPLACE each other */
+    .switch-body .pane {
+      position: absolute;
+      inset: 0;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 320ms cubic-bezier(.2, .8, .2, 1),
+        transform 320ms cubic-bezier(.2, .8, .2, 1);
+      pointer-events: none;
+      /* prevent clipping from collapsed margins in children */
+      padding: 0;
+      display: block;
+    }
+
+    .switch-body .pane.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .switch-body .pane.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Accurate measuring mode (temporarily disables overlay) */
+    .switch-body.measuring .pane {
+      position: static !important;
+      opacity: 1 !important;
+      transform: none !important;
+      pointer-events: auto !important;
+      padding-bottom: 14px !important;
+      /* keep measurement accurate */
+    }
+
+    /* Hover cue: subtle arrow only on hover-capable devices */
+    .hover-arrow {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid var(--ring);
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      transform: translateY(-4px);
+      transition: transform .28s cubic-bezier(.2, .8, .2, 1), opacity .24s ease, box-shadow .24s ease, background-color .24s ease;
+      background: rgba(255, 255, 255, .04);
+      pointer-events: auto;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .hover-arrow:active {
+      transform: translateY(0) scale(.96);
+    }
+
+    /* Keep arrow visible on touch when open + reverse direction */
+    .card.impact-switch[data-open="true"] .hover-arrow {
+      opacity: .9;
+      transform: translateY(0);
+    }
+
+    /* default + smooth tween via CSS var */
+    .card.impact-switch {
+      --arrow-base: -45deg;
+      --arrow-spin: 0turn;
+    }
+
+    .hover-arrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(calc(var(--arrow-base) + var(--arrow-spin)));
+      will-change: transform;
+      transition: transform .45s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    @media (hover:hover) {
+      .card.impact-switch:hover .hover-arrow {
+        opacity: .9;
+        transform: translateY(0);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+      }
+    }
+
+    /* Full-card toggle target */
+    .card-toggle {
+      position: absolute;
+      inset: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: inherit;
+      z-index: 2;
+    }
+
+    .card-toggle:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--ring);
+      border-radius: 16px;
+    }
+
+    /* when impact is open, disable the overlay so scroller can be used */
+    .card.impact-switch[data-open="true"] .card-toggle {
+      pointer-events: none;
+    }
+
+    /* Horizontal KPI scroller */
+    .kpi-scroller {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      padding-bottom: 6px;
+      touch-action: pan-x;
+      /* enable horizontal swipe on touch */
+      scroll-behavior: smooth;
+    }
+
+    .kpi-scroller::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .kpi-scroller::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, .18);
+      border-radius: 8px;
+    }
+
+    .kpi {
+      flex: 0 0 220px;
+      scroll-snap-align: start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+
+    .kpi .label {
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .kpi .value {
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      margin-top: 4px;
+    }
+
+    /* Direction arrows */
+    .dir {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: .85rem;
+      border: 1px solid var(--ring);
+      border-radius: 999px;
+      padding: 2px 8px;
+    }
+
+    .dir .tri {
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      display: inline-block;
+    }
+
+    .dir.up {
+      color: var(--brand);
+      background: rgba(126, 240, 193, .08);
+    }
+
+    .dir.up .tri {
+      border-bottom: 8px solid currentColor;
+    }
+
+    .dir.down {
+      color: var(--brand-2);
+      background: rgba(106, 160, 255, .08);
+    }
+
+    .dir.down .tri {
+      border-top: 8px solid currentColor;
+    }
+
+    .dir.danger {
+      color: var(--danger);
+      background: var(--danger-bg);
+      border-color: var(--danger-ring);
+    }
+
+    /* avoid collapsed margins clipping inside panes */
+    .switch-body .pane> :first-child {
+      margin-top: 0;
+    }
+
+    .switch-body .pane> :last-child {
+      margin-bottom: 0;
+    }
+
+    .switch-body .pane p {
+      margin: 0 0 10px;
+    }
+
+    .subhead {
+      font-size: .8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin: 0 0 8px;
+    }
+
+    /* small vertical gap below the title */
+    .proj-head+.switch-body {
+      margin-top: 6px;
+    }
+
+    /* breathing room inside the panes */
+    .switch-body .pane p {
+      margin: 0 0 10px;
+    }
+
+    .switch-body .pane .subhead {
+      margin: 0 0 8px;
+    }
+
+    .switch-body .pane .tags {
+      margin-top: 8px;
     }
 
   </style>
@@ -669,7 +928,7 @@
         </svg>
         <span>Ashish&nbsp;Puri</span>
       </div>
-      <nav>
+      <nav aria-label="Primary">
         <a href="#projects">Projects</a>
         <a href="#companies">Companies</a>
         <a href="#contact">Contact</a>
@@ -696,8 +955,8 @@
               <span class="topline">
                 <em>7+ years</em><span class="of">&nbsp;of</span>
               </span>
-              <span class="line">turning data into decisions</span>
-              <span class="line">with ML pipelines.</span>
+              <span class="line">integrating AI</span>
+              <span class="line">with business processes.</span>
             </h1>
             <p class="lead">Specializing in customer segmentation, marketing mix modeling, ETA
               forecasting and dynamic pricing.</p>
@@ -712,29 +971,220 @@
       <section id="projects" class="reveal delay-3">
         <h2>Selected Projects</h2>
         <div class="projects">
-          <article class="card reveal delay-1">
-            <div class="muted">A</div>
-            <h3>Project A</h3>
-            <p>Brief problem → approach → business impact. Example: Improved demand forecast MAPE
-              from 18% → 7%, reducing stockouts.</p>
-            <div class="tags"><span class="tag">Python</span><span
-                class="tag">Time‑series</span><span class="tag">XGBoost</span></div>
+
+          <!-- INTERACTIVE PROJECT CARD: ETA forecasting -->
+          <article class="card impact-switch reveal delay-1" data-open="false">
+            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
+            <div class="muted">Forecasting</div>
+            <h3 class="proj-head">ETA of ordered food</h3>
+
+            <div class="switch-body">
+              <!-- SUMMARY (visible initially) -->
+              <div class="pane summary show">
+                <p>Engineered high-performance ML models to forecast order preparation and delivery
+                  times. ~10% relative improvement vs rule-based predictions; improved dispatch
+                  timing and customer ETAs.</p>
+                <div class="tags"><span class="tag">Airflow</span><span
+                    class="tag">Sagemaker</span><span class="tag">LightGBM</span></div>
+              </div>
+
+              <!-- IMPACT (hidden initially) -->
+              <div class="pane impact">
+                <div class="subhead">Business impact</div>
+                <div class="kpi-scroller" role="list">
+                  <div class="kpi" role="listitem">
+                    <div class="label">On-time deliveries</div>
+                    <div class="value">+6.2 pp</div>
+                    <span class="dir up"><span class="tri"></span><span>+9.8%</span></span>
+                  </div>
+
+                  <div class="kpi" role="listitem">
+                    <div class="label">ETA MAE</div>
+                    <div class="value">−1.3 min</div>
+                    <!-- red downward arrow per spec -->
+                    <span class="dir down danger"><span
+                        class="tri"></span><span>−10.4%</span></span>
+                  </div>
+
+                  <div class="kpi" role="listitem">
+                    <div class="label">Support tickets / 1k orders</div>
+                    <div class="value">-2.6 pp</div>
+                    <span class="dir down danger"><span class="tri"></span><span>−18%</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Whole-card toggle (no visible text) -->
+            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
           </article>
-          <article class="card reveal delay-2">
-            <div class="muted">B</div>
-            <h3>Project B</h3>
-            <p>Example: Built NLP pipeline for customer tickets; 18% faster resolution via topic
-              routing and summarization dashboards.</p>
-            <div class="tags"><span class="tag">NLP</span><span class="tag">Transformers</span><span
-                class="tag">Dash</span></div>
+
+          <!-- Original Project B -->
+          <article class="card impact-switch reveal delay-2" data-open="false">
+            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
+            <div class="muted">Pricing</div>
+            <h3 class="proj-head">Automated time-based surge multipliers</h3>
+
+            <div class="switch-body">
+              <!-- SUMMARY -->
+              <div class="pane summary show">
+                <p>Developed an automated system for courier pricing multipliers by formulating the
+                  problem as an optimization task.</p>
+                <div class="tags">
+                  <span class="tag">Optimization</span><span class="tag">Pricing</span>
+                </div>
+              </div>
+
+              <!-- KPIs -->
+              <div class="pane impact">
+                <div class="subhead">Business impact</div>
+                <div class="kpi-scroller" role="list">
+                  <div class="kpi" role="listitem">
+                    <div class="label">Quarterly operating profit</div>
+                    <div class="value">+5.5%</div>
+                    <span class="dir up"><span class="tri"></span><span>+5.5%</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
           </article>
-          <article class="card reveal delay-3">
-            <div class="muted">C</div>
-            <h3>Project C</h3>
-            <p>Example: Real‑time GPS spoof detection with sub‑200ms P99 latency, ensuring accurate
-              distance‑based payouts.</p>
-            <div class="tags"><span class="tag">PyTorch</span><span class="tag">MLOps</span><span
-                class="tag">Edge</span></div>
+
+          <!-- Original Project C -->
+          <article class="card impact-switch reveal delay-3" data-open="false">
+            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
+            <div class="muted">Optimization</div>
+            <h3 class="proj-head">Optimizing order dispatch timing</h3>
+
+            <div class="switch-body">
+              <!-- SUMMARY -->
+              <div class="pane summary show">
+                <p>Built an optimization solution to determine dispatch timing based on real-time
+                  demand–supply imbalance.</p>
+                <div class="tags"><span class="tag">Optimization</span><span
+                    class="tag">Real-time</span></div>
+              </div>
+
+              <!-- KPIs -->
+              <div class="pane impact">
+                <div class="subhead">Business impact</div>
+                <div class="kpi-scroller" role="list">
+                  <div class="kpi" role="listitem">
+                    <div class="label">Handshake time</div>
+                    <div class="value">−4 min</div>
+                    <span class="dir down danger"><span class="tri"></span><span>−8 %</span></span>
+                  </div>
+                  <div class="kpi" role="listitem">
+                    <div class="label">Share of total order time</div>
+                    <div class="value">−11 pp</div>
+                    <span class="dir down danger"><span class="tri"></span><span>−16%</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
+          </article>
+
+          <!-- Original Project D -->
+          <article class="card impact-switch reveal delay-4" data-open="false">
+            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
+            <div class="muted">Segmentation</div>
+            <h3 class="proj-head">Customer behaviour analysis</h3>
+
+            <div class="switch-body">
+              <!-- SUMMARY -->
+              <div class="pane summary show">
+                <p>Used an unsupervised approach (K-means with PCA) to cluster customers by behavior
+                  and channel preference. The solution became a ZS proprietary asset.</p>
+                <div class="tags">
+                  <span class="tag">K-means</span><span class="tag">PCA</span><span
+                    class="tag">Segmentation</span>
+                </div>
+              </div>
+
+              <!-- KPIs -->
+              <div class="pane impact">
+                <div class="subhead">Business impact</div>
+                <div class="kpi-scroller" role="list">
+                  <div class="kpi" role="listitem">
+                    <div class="label">Brands leveraging asset</div>
+                    <div class="value">5</div>
+                    <span class="dir up"><span class="tri"></span><span>+5 brands</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
+          </article>
+
+          <!-- Original Project E -->
+          <article class="card impact-switch reveal delay-5" data-open="false">
+            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
+            <div class="muted">Recommendation system</div>
+            <h3 class="proj-head">Content Recommender</h3>
+
+            <div class="switch-body">
+              <!-- SUMMARY -->
+              <div class="pane summary show">
+                <p>Used a Hybrid Collaborative Filtering approach backed by a Marketing Mix Model to
+                  identify content a customer is most likely to engage with.</p>
+                <div class="tags">
+                  <span class="tag">Hybrid CF</span><span class="tag">MMM</span>
+                </div>
+              </div>
+
+              <!-- KPIs -->
+              <div class="pane impact">
+                <div class="subhead">Business impact</div>
+                <div class="kpi-scroller" role="list">
+                  <div class="kpi" role="listitem">
+                    <div class="label">Customer engagement</div>
+                    <div class="value">+30 pp</div>
+                    <span class="dir up"><span class="tri"></span><span>+42%</span></span>
+                  </div>
+                  <div class="kpi" role="listitem">
+                    <div class="label">Brand revenue</div>
+                    <div class="value">+10 pp</div>
+                    <span class="dir up"><span class="tri"></span><span>+12%</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
+          </article>
+
+          <!-- Original Project E -->
+          <article class="card impact-switch reveal delay-6" data-open="false">
+            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
+            <div class="muted">Inventory</div>
+            <h3 class="proj-head">Stock-out Prediction</h3>
+
+            <div class="switch-body">
+              <!-- SUMMARY -->
+              <div class="pane summary show">
+                <p>Built a deep-learning model using TensorFlow components to predict when an item
+                  will stock out.</p>
+                <div class="tags">
+                  <span class="tag">TensorFlow</span><span class="tag">Deep Learning</span>
+                </div>
+              </div>
+
+              <!-- KPIs -->
+              <div class="pane impact">
+                <div class="subhead">Business impact</div>
+                <div class="kpi-scroller" role="list">
+                  <div class="kpi" role="listitem">
+                    <div class="label">Order cancellations</div>
+                    <div class="value">−16 pp</div>
+                    <span class="dir down danger"><span class="tri"></span><span>−18%</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
           </article>
         </div>
       </section>
@@ -779,10 +1229,13 @@
     <footer>
       <div class="footer-inner">
         <small>© <span id="year"></span> Ashish Puri</small>
-        <span class="pill">Built for GitHub Pages · No build step</span>
+        <!-- <span class="pill">Built for GitHub Pages · No build step</span> -->
       </div>
     </footer>
   </div>
+
+  <div class="page-bottom-glow" aria-hidden="true"></div>
+
   <script>
     // Helper: same-origin check
     function sameOrigin(url) {
@@ -793,24 +1246,22 @@
       }
     }
 
-    // Run after DOM is ready so elements exist
     document.addEventListener('DOMContentLoaded', () => {
       // 1) Start at top on first external visit with a hash (e.g. .../#contact)
       if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual'; // disable browser auto-restore
+        history.scrollRestoration = 'manual';
       }
       const cameFromExternal = !document.referrer || !sameOrigin(document.referrer);
       if (cameFromExternal && location.hash) {
         history.replaceState(null, '', location.pathname + location.search);
-        // Defer to ensure layout is ready, then jump to top
         setTimeout(() => window.scrollTo(0, 0), 0);
       }
 
-      // 2) Year stamp (skip if element is missing)
+      // 2) Year stamp
       const yearEl = document.getElementById('year');
       if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-      // 3) Reveal animations (fallback if IO unsupported)
+      // 3) Reveal animations
       const reveals = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
         const io = new IntersectionObserver((entries, obs) => {
@@ -827,6 +1278,133 @@
       } else {
         reveals.forEach(el => el.classList.add('on'));
       }
+    });
+
+    // ============================
+    // Interactive projects script
+    // ============================
+    document.addEventListener('DOMContentLoaded', () => {
+      const cards = document.querySelectorAll('.card.impact-switch');
+
+      function setMaxHeight(card) {
+        const body = card.querySelector('.switch-body');
+        const summary = card.querySelector('.pane.summary');
+        const impact = card.querySelector('.pane.impact');
+        if (!body || !summary || !impact) return;
+
+        // Which pane is showing now?
+        const sumShown = summary.classList.contains('show');
+        const impShown = impact.classList.contains('show');
+
+        // Measure natural heights in flow
+        body.classList.add('measuring');
+        summary.classList.add('show');
+        summary.classList.remove('hide');
+        impact.classList.add('show');
+        impact.classList.remove('hide');
+        const sumH = summary.offsetHeight;
+        const impH = impact.offsetHeight;
+        const maxH = Math.max(sumH, impH);
+
+        // Restore
+        if (!sumShown) {
+          summary.classList.remove('show');
+          summary.classList.add('hide');
+        }
+        if (!impShown) {
+          impact.classList.remove('show');
+          impact.classList.add('hide');
+        }
+        body.classList.remove('measuring');
+
+        // Lock height
+        body.style.setProperty('--panel-h', maxH + 'px');
+      }
+
+      cards.forEach(card => {
+        const body = card.querySelector('.switch-body');
+        const summary = card.querySelector('.pane.summary');
+        const impact = card.querySelector('.pane.impact');
+        const toggle = card.querySelector('.card-toggle');
+        const title = card.querySelector('.proj-head');
+        const arrow = card.querySelector('.hover-arrow');
+        let spin = 0; // cumulative turns applied to the arrow
+        const setSpin = () => {
+          if (arrow) arrow.style.setProperty('--arrow-spin', spin + 'turn');
+        };
+        setSpin(); // initialize
+        if (!body || !summary || !impact || !toggle) return;
+
+        // Initial lock
+        setMaxHeight(card);
+
+        // Toggle panes (height is fixed)
+        function toggleOpen() {
+          const open = card.dataset.open === 'true';
+          const opening = card.dataset.open !== 'true'; // summary -> KPIs ?
+          spin += 0.5;
+          setSpin();
+          if (open) {
+            summary.classList.add('show');
+            summary.classList.remove('hide');
+            impact.classList.remove('show');
+            impact.classList.add('hide');
+            card.dataset.open = 'false';
+          } else {
+            impact.classList.add('show');
+            impact.classList.remove('hide');
+            summary.classList.remove('show');
+            summary.classList.add('hide');
+            card.dataset.open = 'true';
+          }
+          if (arrow) {
+            const open = card.dataset.open === 'true';
+            arrow.setAttribute('aria-label', open ? 'Back to summary' :
+              'Show business impact');
+          }
+        }
+        let busy = false; // add near toggleOpen, per card
+
+        function safeToggle() {
+          if (busy) return;
+          busy = true;
+          toggleOpen();
+          setTimeout(() => busy = false, 320); // matches your pane transition ~320ms
+        }
+
+        toggle.addEventListener('click', toggleOpen);
+        // Allow closing by clicking the title when open (does not block scroller)
+        if (title) title.addEventListener('click', () => {
+          if (card.dataset.open === 'true') toggleOpen();
+        });
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && card.dataset.open === 'true') toggleOpen();
+        });
+        if (arrow) {
+          arrow.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            safeToggle();
+          });
+          arrow.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              e.stopPropagation();
+              e.stopImmediatePropagation();
+              safeToggle();
+            }
+          });
+        }
+
+        // Recalculate when layout/Fonts change
+        const ro = new ResizeObserver(() => setMaxHeight(card));
+        ro.observe(summary);
+        ro.observe(impact);
+        window.addEventListener('resize', () => setMaxHeight(card));
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => setMaxHeight(card));
+        }
+      });
     });
 
   </script>
