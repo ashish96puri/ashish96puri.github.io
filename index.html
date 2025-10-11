@@ -685,7 +685,7 @@
         transform 320ms cubic-bezier(.2, .8, .2, 1);
       pointer-events: none;
       /* prevent clipping from collapsed margins in children */
-      padding: 0 0 14px 0;
+      padding: 14px;
       display: block;
     }
 
@@ -709,33 +709,6 @@
       pointer-events: auto !important;
       padding-bottom: 14px !important;
       /* keep measurement accurate */
-    }
-
-    /* Impact panel inside the overlay */
-    .switch-body .impact-panel {
-      height: 100%;
-      box-sizing: border-box;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      /* contain scroller */
-    }
-
-    /* Summary gets the same shell as impact for perfect alignment */
-    .summary-panel {
-      height: 100%;
-      box-sizing: border-box;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
     }
 
     /* Hover cue: subtle arrow only on hover-capable devices */
@@ -989,28 +962,26 @@
 
               <!-- IMPACT (hidden initially) -->
               <div class="pane impact">
-                <div class="impact-panel">
-                  <div class="subhead">Business impact</div>
-                  <div class="kpi-scroller" role="list">
-                    <div class="kpi" role="listitem">
-                      <div class="label">On-time deliveries</div>
-                      <div class="value">+6.2 pp</div>
-                      <span class="dir up"><span class="tri"></span><span>+9.8%</span></span>
-                    </div>
+                <div class="subhead">Business impact</div>
+                <div class="kpi-scroller" role="list">
+                  <div class="kpi" role="listitem">
+                    <div class="label">On-time deliveries</div>
+                    <div class="value">+6.2 pp</div>
+                    <span class="dir up"><span class="tri"></span><span>+9.8%</span></span>
+                  </div>
 
-                    <div class="kpi" role="listitem">
-                      <div class="label">ETA MAE</div>
-                      <div class="value">−1.3 min</div>
-                      <!-- red downward arrow per spec -->
-                      <span class="dir down danger"><span
-                          class="tri"></span><span>−10.4%</span></span>
-                    </div>
+                  <div class="kpi" role="listitem">
+                    <div class="label">ETA MAE</div>
+                    <div class="value">−1.3 min</div>
+                    <!-- red downward arrow per spec -->
+                    <span class="dir down danger"><span
+                        class="tri"></span><span>−10.4%</span></span>
+                  </div>
 
-                    <div class="kpi" role="listitem">
-                      <div class="label">Support tickets / 1k orders</div>
-                      <div class="value">2.6%</div>
-                      <span class="dir down"><span class="tri"></span><span>−18%</span></span>
-                    </div>
+                  <div class="kpi" role="listitem">
+                    <div class="label">Support tickets / 1k orders</div>
+                    <div class="value">2.6%</div>
+                    <span class="dir down"><span class="tri"></span><span>−18%</span></span>
                   </div>
                 </div>
               </div>
