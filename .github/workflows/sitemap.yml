@@ -1,0 +1,22 @@
+# .github/workflows/sitemap.yml
+name: Generate sitemap
+on:
+  push:
+    branches: [ main ]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: "https://ashish96puri.github.io"
+      - name: Commit sitemap
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add sitemap.xml
+          git commit -m "Update sitemap" || echo "No changes"
+          git push
