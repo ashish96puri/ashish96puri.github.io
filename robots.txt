@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ashish96puri.github.io/sitemap.xml
