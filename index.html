@@ -685,7 +685,7 @@
         transform 320ms cubic-bezier(.2, .8, .2, 1);
       pointer-events: none;
       /* prevent clipping from collapsed margins in children */
-      padding: 14px;
+      padding: 0;
       display: block;
     }
 
@@ -724,10 +724,14 @@
       place-items: center;
       opacity: 0;
       transform: translateY(-4px);
-      transition: opacity .22s ease, transform .22s ease, box-shadow .22s ease;
+      transition: transform .28s cubic-bezier(.2, .8, .2, 1), opacity .24s ease, box-shadow .24s ease, background-color .24s ease;
       background: rgba(255, 255, 255, .04);
       pointer-events: auto;
       cursor: pointer;
+    }
+
+    .hover-arrow:active {
+      transform: translateY(0) scale(.96);
     }
 
     /* Keep arrow visible on touch when open + reverse direction */
@@ -738,6 +742,8 @@
 
     .card.impact-switch[data-open="true"] .hover-arrow::before {
       transform: rotate(135deg);
+      will-change: transform;
+      transition: transform .28s cubic-bezier(.2, .8, .2, 1);
     }
 
     .hover-arrow::before {
@@ -886,6 +892,24 @@
       margin: 0 0 8px;
     }
 
+    /* small vertical gap below the title */
+    .proj-head+.switch-body {
+      margin-top: 6px;
+    }
+
+    /* breathing room inside the panes */
+    .switch-body .pane p {
+      margin: 0 0 10px;
+    }
+
+    .switch-body .pane .subhead {
+      margin: 0 0 8px;
+    }
+
+    .switch-body .pane .tags {
+      margin-top: 8px;
+    }
+
   </style>
 </head>
 
@@ -928,7 +952,7 @@
                 <em>7+ years</em><span class="of">&nbsp;of</span>
               </span>
               <span class="line">turning data into decisions</span>
-              <span class="line">with ML pipelines.</span>
+              <span class="line">with AI integration.</span>
             </h1>
             <p class="lead">Specializing in customer segmentation, marketing mix modeling, ETA
               forecasting and dynamic pricing.</p>
@@ -948,7 +972,7 @@
           <article class="card impact-switch reveal delay-1" data-open="false">
             <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
             <div class="muted">Forecasting</div>
-            <h3 class="proj-head">ETA forecasting</h3>
+            <h3 class="proj-head">ETA of ordered food</h3>
 
             <div class="switch-body">
               <!-- SUMMARY (visible initially) -->
@@ -956,8 +980,8 @@
                 <p>Engineered high-performance ML models to forecast order preparation and delivery
                   times. ~10% relative improvement vs rule-based predictions; improved dispatch
                   timing and customer ETAs.</p>
-                <div class="tags"><span class="tag">Python</span><span
-                    class="tag">Time-series</span><span class="tag">XGBoost</span></div>
+                <div class="tags"><span class="tag">Airflow</span><span
+                    class="tag">Sagemaker</span><span class="tag">LightGBM</span></div>
               </div>
 
               <!-- IMPACT (hidden initially) -->
@@ -980,8 +1004,8 @@
 
                   <div class="kpi" role="listitem">
                     <div class="label">Support tickets / 1k orders</div>
-                    <div class="value">2.6%</div>
-                    <span class="dir down"><span class="tri"></span><span>−18%</span></span>
+                    <div class="value">-2.6 pp</div>
+                    <span class="dir down danger"><span class="tri"></span><span>−18%</span></span>
                   </div>
                 </div>
               </div>
