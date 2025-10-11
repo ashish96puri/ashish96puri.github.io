@@ -728,6 +728,7 @@
       background: rgba(255, 255, 255, .04);
       pointer-events: auto;
       cursor: pointer;
+      z-index: 3;
     }
 
     .hover-arrow:active {
@@ -740,10 +741,10 @@
       transform: translateY(0);
     }
 
-    .card.impact-switch[data-open="true"] .hover-arrow::before {
-      transform: rotate(135deg);
-      will-change: transform;
-      transition: transform .28s cubic-bezier(.2, .8, .2, 1);
+    /* default + smooth tween via CSS var */
+    .card.impact-switch {
+      --arrow-base: -45deg;
+      --arrow-spin: 0turn;
     }
 
     .hover-arrow::before {
@@ -752,7 +753,9 @@
       height: 10px;
       border-right: 2px solid currentColor;
       border-bottom: 2px solid currentColor;
-      transform: rotate(-45deg);
+      transform: rotate(calc(var(--arrow-base) + var(--arrow-spin)));
+      will-change: transform;
+      transition: transform .45s cubic-bezier(.2, .8, .2, 1);
     }
 
     @media (hover:hover) {
@@ -771,6 +774,7 @@
       background: transparent;
       cursor: pointer;
       color: inherit;
+      z-index: 2;
     }
 
     .card-toggle:focus-visible {
@@ -1177,6 +1181,11 @@
         const toggle = card.querySelector('.card-toggle');
         const title = card.querySelector('.proj-head');
         const arrow = card.querySelector('.hover-arrow');
+        let spin = 0; // cumulative turns applied to the arrow
+        const setSpin = () => {
+          if (arrow) arrow.style.setProperty('--arrow-spin', spin + 'turn');
+        };
+        setSpin(); // initialize
         if (!body || !summary || !impact || !toggle) return;
 
         // Initial lock
@@ -1185,6 +1194,9 @@
         // Toggle panes (height is fixed)
         function toggleOpen() {
           const open = card.dataset.open === 'true';
+          const opening = card.dataset.open !== 'true'; // summary -> KPIs ?
+          spin += 0.5;
+          setSpin();
           if (open) {
             summary.classList.add('show');
             summary.classList.remove('hide');
@@ -1204,6 +1216,14 @@
               'Show business impact');
           }
         }
+        let busy = false; // add near toggleOpen, per card
+
+        function safeToggle() {
+          if (busy) return;
+          busy = true;
+          toggleOpen();
+          setTimeout(() => busy = false, 320); // matches your pane transition ~320ms
+        }
 
         toggle.addEventListener('click', toggleOpen);
         // Allow closing by clicking the title when open (does not block scroller)
@@ -1214,11 +1234,17 @@
           if (e.key === 'Escape' && card.dataset.open === 'true') toggleOpen();
         });
         if (arrow) {
-          arrow.addEventListener('click', toggleOpen);
+          arrow.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            safeToggle();
+          });
           arrow.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
-              toggleOpen();
+              e.stopPropagation();
+              e.stopImmediatePropagation();
+              safeToggle();
             }
           });
         }
