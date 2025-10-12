@@ -942,6 +942,141 @@
       margin-top: 8px;
     }
 
+    /* Services section */
+    .services {
+      padding-top: 28px;
+    }
+
+    .services .service-sub {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    /* Mini heading row with icon */
+    .service-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .service-head h3 {
+      margin: 0;
+    }
+
+    /* Soft gradient icon chip */
+    .service-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: radial-gradient(120% 120% at 20% 20%, rgba(126, 240, 193, .18), rgba(106, 160, 255, .10));
+    }
+
+    /* Check list */
+    .list-checks {
+      margin: 10px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .list-checks li {
+      display: grid;
+      grid-template-columns: 16px 1fr;
+      gap: 8px;
+      align-items: start;
+      margin: 6px 0;
+    }
+
+    .list-checks li::before {
+      content: "";
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid var(--brand);
+      border-bottom: 2px solid var(--brand);
+      transform: rotate(-45deg);
+      margin-top: 6px;
+    }
+
+    CTA row inside card .service-cta {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Two-column services card */
+    .service-duo {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 900px) {
+      .service-duo {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .service-col {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    /* Consistent vertical rhythm for Services */
+    .services .service-col p {
+      margin: 0 0 6px;
+      line-height: 1.6;
+    }
+
+    .services .service-col .list-checks {
+      margin: 0;
+      /* consistent gap after the paragraph */
+      padding-top: 2px;
+      /* prevents margin-collapsing & gives a tiny buffer */
+    }
+
+    .services .service-col .list-checks li {
+      margin: 8px 0;
+      /* equal spacing between bullets */
+    }
+
+    @media (min-width: 900px) {
+      .services .service-col p {
+        margin-bottom: 8px;
+      }
+
+      /* was 14px */
+      .services .service-col .list-checks {
+        margin-top: 0;
+        padding-top: 2px;
+      }
+
+      /* kill extra gap */
+      .services .service-col .list-checks li {
+        margin: 6px 0;
+      }
+
+      /* was 10px */
+      .services .service-cta-row {
+        margin-top: 16px;
+      }
+
+      /* slight space under card */
+    }
+
+    .services .service-col p+.list-checks {
+      margin-top: 0 !important;
+    }
+
+    .link-underline {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1.5px;
+    }
+
   </style>
 </head>
 
@@ -959,6 +1094,7 @@
       <nav aria-label="Primary">
         <a href="#projects">Projects</a>
         <a href="#companies">Companies</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -986,24 +1122,67 @@
               <span class="line">integrating AI</span>
               <span class="line">with business processes.</span>
             </h1>
-            <p class="lead">Specializing in customer segmentation, marketing mix modeling, ETA
-              forecasting and dynamic pricing.</p>
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
-              <a class="btn btn-white" href="#projects">See Project Samples</a>
-              <a class="btn btn-ghost" href="mailto:ashish96puri@gmail.com">Email me</a>
+              <a class="btn btn-white" href="#services">Services offered</a>
+              <a class="btn btn-ghost" href="https://calendly.com/ashish96puri/30min">Book an intro
+                call</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="projects" class="reveal delay-3">
-        <h2>Selected Projects</h2>
+      <section id="services" class="services reveal delay-1">
+        <h2>Services</h2>
+
+        <div class="card service-duo">
+          <!-- Left: AI Integrations -->
+          <article class="service-col">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                  <path d="M6 8h12M6 12h12M6 16h8" stroke="currentColor" fill="none"
+                    stroke-width="1.2" />
+                </svg>
+              </span>
+              <h3>AI Integrations</h3>
+            </div>
+            <p>Plug AI into your tools with safety, monitoring, and guardrails.</p>
+            <ul class="list-checks">
+              <li>LLM/RAG for support & docs</li>
+              <li>Workflow automation & agents</li>
+              <li>PII handling & evaluation harness</li>
+            </ul>
+          </article>
+
+          <!-- Right: Forecasting & Pricing -->
+          <article class="service-col">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                  <path d="M4 16l5-5 3 3 6-7" stroke="currentColor" fill="none"
+                    stroke-width="1.2" />
+                </svg>
+              </span>
+              <h3>Forecasting & Pricing</h3>
+            </div>
+            <p>Time-series, demand modeling, and optimization techniques.</p>
+            <ul class="list-checks">
+              <li>Marketing Mix Modeling, ETAs, stock-out prediction</li>
+              <li>Dynamic pricing / surge</li>
+              <li>Experiment design</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="reveal delay-2">
+        <h2>Delivered Projects</h2>
         <div class="projects">
 
-          <!-- INTERACTIVE PROJECT CARD: ETA forecasting -->
+          <!-- Original Project B -->
           <article class="card impact-switch reveal delay-1" data-open="false">
             <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
-            <div class="muted">Forecasting</div>
+            <div class="muted">Forecasting for Logistics</div>
             <h3 class="proj-head">ETA of ordered food</h3>
 
             <div class="switch-body">
@@ -1049,7 +1228,7 @@
           <!-- Original Project B -->
           <article class="card impact-switch reveal delay-2" data-open="false">
             <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
-            <div class="muted">Pricing</div>
+            <div class="muted">Dynamic Pricing</div>
             <h3 class="proj-head">Automated time-based surge multipliers</h3>
 
             <div class="switch-body">
@@ -1058,7 +1237,8 @@
                 <p>Developed an automated system for courier pricing multipliers by formulating the
                   problem as an optimization task.</p>
                 <div class="tags">
-                  <span class="tag">Optimization</span><span class="tag">Pricing</span>
+                  <span class="tag">Optimization</span><span class="tag">Pricing</span><span
+                    class="tag">Elasticity modelling</span>
                 </div>
               </div>
 
@@ -1097,14 +1277,9 @@
                 <div class="subhead">Business impact</div>
                 <div class="kpi-scroller" role="list">
                   <div class="kpi" role="listitem">
-                    <div class="label">Handshake time</div>
+                    <div class="label">Courier wasted time</div>
                     <div class="value">−4 min</div>
                     <span class="dir down danger"><span class="tri"></span><span>−8 %</span></span>
-                  </div>
-                  <div class="kpi" role="listitem">
-                    <div class="label">Share of total order time</div>
-                    <div class="value">−11 pp</div>
-                    <span class="dir down danger"><span class="tri"></span><span>−16%</span></span>
                   </div>
                 </div>
               </div>
@@ -1247,10 +1422,13 @@
       <section id="contact" class="reveal delay-4">
         <h2>Contact</h2>
         <div class="card">
-          <p>Send an email to: <a href="mailto:ashish96puri@gmail.com">ashish96puri@gmail.com</a>. I
-            usually respond within 1–2 business days.</p>
+          <p>Send an email to: <a href="mailto:ashish96puri@gmail.com">ashish96puri@gmail.com</a> or
+            simply book an intro call <a href="https://calendly.com/ashish96puri/30min"
+              class="link-underline">here</a>.
+          </p>
         </div>
       </section>
+
     </main>
 
     <footer>
@@ -1451,10 +1629,10 @@
           ]
         },
         {
-          "@id": "https://ashish96puri.github.io/#service",
+          "@id": "https://ashish96puri.github.io/#services",
           "@type": "ProfessionalService",
           "name": "Data Science Consulting",
-          "url": "https://ashish96puri.github.io/services/",
+          "url": "https://ashish96puri.github.io/#services/",
           "serviceType": ["Dynamic Pricing", "ETA Forecasting", "Marketing Mix Modeling",
             "Customer Segmentation"
           ],
@@ -1465,11 +1643,9 @@
           "provider": {
             "@id": "https://ashish96puri.github.io/#person"
           }
-          /* Optional extras you can add later:
           "email": "mailto:ashish96puri@gmail.com",
           "priceRange": "130-160$ per hour",
-          "knowsAbout": ["pricing analytics","ETA forecasting","MMM","segmentation"]
-          */
+          "knowsAbout": ["pricing analytics", "ETA forecasting", "MMM", "segmentation"]
         }
       ]
     }
