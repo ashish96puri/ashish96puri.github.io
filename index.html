@@ -999,8 +999,7 @@
       margin-top: 6px;
     }
 
-    /* CTA row inside card */
-    .service-cta {
+    CTA row inside card .service-cta {
       margin-top: 12px;
       display: flex;
       gap: 8px;
@@ -1023,46 +1022,6 @@
       flex-wrap: wrap;
     }
 
-    /* --- Services slider --- */
-    .service-viewport {
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      background: var(--card-2);
-    }
-
-    .service-track {
-      display: flex;
-      gap: 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-    }
-
-    .slide {
-      flex: 0 0 100%;
-      /* one full-width slide at a time */
-      scroll-snap-align: start;
-      padding: 18px;
-    }
-
-    @media (min-width: 900px) {
-      .slide {
-        padding: 22px;
-      }
-    }
-
-    /* Optional: de-emphasize scrollbar */
-    .service-track::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .service-track::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, .18);
-      border-radius: 8px;
-    }
-
     /* Niceties for the CTA slide */
     .slide-cta {
       display: grid;
@@ -1070,45 +1029,23 @@
       align-content: start;
     }
 
-    /* Hide horizontal scrollbar */
-    .service-track {
-      scrollbar-width: none;
+    /* Two-column services card */
+    .service-duo {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
     }
 
-    /* Firefox */
-    .service-track::-webkit-scrollbar {
-      display: none;
+    @media (min-width: 900px) {
+      .service-duo {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
-    /* WebKit */
-
-    /* Dots */
-    .service-dots {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .service-dots button {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      padding: 0;
-      background: rgba(255, 255, 255, .22);
-      border: 1px solid var(--border);
-      transition: transform .2s ease, background-color .2s ease, opacity .2s ease;
-      cursor: pointer;
-    }
-
-    .service-dots button[aria-selected="true"] {
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      transform: scale(1.15);
-    }
-
-    .service-dots button:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px var(--ring);
+    .service-col {
+      display: grid;
+      gap: 10px;
+      align-content: start;
     }
 
   </style>
@@ -1168,66 +1105,44 @@
         <h2>Services</h2>
         <p class="service-sub">AI integration for your business processes — from idea to impact.</p>
 
-        <div class="service-viewport">
-          <div class="service-track" id="services-track">
-            <!-- Slide 1: AI Integrations -->
-            <article class="card slide">
-              <div class="service-head">
-                <span class="service-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="22" height="22">
-                    <path d="M6 8h12M6 12h12M6 16h8" stroke="currentColor" fill="none"
-                      stroke-width="1.2" />
-                  </svg>
-                </span>
-                <h3>AI Integrations</h3>
-              </div>
-              <p>Plug AI into your tools with safety, monitoring, and guardrails.</p>
-              <ul class="list-checks">
-                <li>LLM/RAG for support & docs</li>
-                <li>Workflow automation & agents</li>
-                <li>PII handling & eval harness</li>
-              </ul>
-              <div class="service-cta">
-                <a class="btn btn-white"
-                  href="mailto:ashish96puri@gmail.com?subject=AI%20Integration">Integrate AI</a>
-              </div>
-            </article>
+        <div class="card service-duo">
+          <!-- Left: AI Integrations -->
+          <article class="service-col">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                  <path d="M6 8h12M6 12h12M6 16h8" stroke="currentColor" fill="none"
+                    stroke-width="1.2" />
+                </svg>
+              </span>
+              <h3>AI Integrations</h3>
+            </div>
+            <p>Plug AI into your tools with safety, monitoring, and guardrails.</p>
+            <ul class="list-checks">
+              <li>LLM/RAG for support & docs</li>
+              <li>Workflow automation & agents</li>
+              <li>PII handling & evaluation harness</li>
+            </ul>
+          </article>
 
-            <!-- Slide 2: Forecasting & Pricing -->
-            <article class="card slide">
-              <div class="service-head">
-                <span class="service-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" width="22" height="22">
-                    <path d="M4 16l5-5 3 3 6-7" stroke="currentColor" fill="none"
-                      stroke-width="1.2" />
-                  </svg>
-                </span>
-                <h3>Forecasting & Pricing</h3>
-              </div>
-              <p>Time-series, demand modeling, and optimization in your decision loop.</p>
-              <ul class="list-checks">
-                <li>MMMs, ETAs, stock-outs</li>
-                <li>Dynamic pricing / surge</li>
-                <li>Experiment design</li>
-              </ul>
-              <div class="service-cta">
-                <a class="btn btn-white"
-                  href="mailto:ashish96puri@gmail.com?subject=Forecasting%20or%20Pricing">Model my
-                  demand</a>
-              </div>
-            </article>
-
-            <!-- Slide 3: CTA -->
-            <article class="card slide slide-cta">
-              <h3>Ready to see impact?</h3>
-              <p class="service-sub">See projects delivered or book an intro call.</p>
-              <div class="service-cta">
-                <a class="btn btn-ghost" href="#projects">See projects delivered</a>
-                <a class="btn btn-white"
-                  href="mailto:ashish96puri@gmail.com?subject=Intro%20call">Book an intro call</a>
-              </div>
-            </article>
-          </div>
+          <!-- Right: Forecasting & Pricing -->
+          <article class="service-col">
+            <div class="service-head">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                  <path d="M4 16l5-5 3 3 6-7" stroke="currentColor" fill="none"
+                    stroke-width="1.2" />
+                </svg>
+              </span>
+              <h3>Forecasting & Pricing</h3>
+            </div>
+            <p>Time-series, demand modeling, and optimization techniques.</p>
+            <ul class="list-checks">
+              <li>MMMs, ETAs, stock-outs</li>
+              <li>Dynamic pricing / surge</li>
+              <li>Experiment design</li>
+            </ul>
+          </article>
         </div>
         <div class="service-dots" id="services-dots" aria-label="Services pagination"></div>
         <!-- Credibility ribbon -->
@@ -1677,117 +1592,6 @@
           document.fonts.ready.then(() => setMaxHeight(card));
         }
       });
-    });
-    document.addEventListener('DOMContentLoaded', () => {
-      const viewport = document.querySelector('#services .service-viewport');
-      const track = document.getElementById('services-track');
-      const dotsWrap = document.getElementById('services-dots');
-      if (!viewport || !track || !dotsWrap) return;
-
-      const slides = Array.from(track.querySelectorAll('.slide'));
-      let i = 0,
-        timer = null;
-      const INTERVAL = 4500; // ms
-
-      function slideWidth() {
-        return viewport.clientWidth;
-      }
-
-      function go(n, opts = {
-        autoplay: true
-      }) {
-        i = (n + slides.length) % slides.length;
-        track.scrollTo({
-          left: slideWidth() * i,
-          behavior: 'smooth'
-        });
-        updateDots();
-        if (opts.autoplay === false) {
-          stop();
-          start();
-        } // restart after manual nav
-      }
-
-      function start() {
-        if (!timer) timer = setInterval(() => go(i + 1), INTERVAL);
-      }
-
-      function stop() {
-        if (timer) {
-          clearInterval(timer);
-          timer = null;
-        }
-      }
-
-      // Build dots
-      dotsWrap.setAttribute('role', 'tablist');
-      dotsWrap.innerHTML = '';
-      slides.forEach((_, idx) => {
-        const b = document.createElement('button');
-        b.type = 'button';
-        b.setAttribute('role', 'tab');
-        b.setAttribute('aria-label', `Slide ${idx + 1}`);
-        b.addEventListener('click', () => go(idx, {
-          autoplay: false
-        }));
-        dotsWrap.appendChild(b);
-      });
-
-      function updateDots() {
-        [...dotsWrap.children].forEach((b, idx) =>
-          b.setAttribute('aria-selected', String(idx === i))
-        );
-      }
-
-      // Pause on hover / touch
-      viewport.addEventListener('mouseenter', stop);
-      viewport.addEventListener('mouseleave', start);
-      viewport.addEventListener('touchstart', stop, {
-        passive: true
-      });
-      viewport.addEventListener('touchend', start);
-
-      // Keyboard support
-      viewport.tabIndex = 0;
-      viewport.addEventListener('keydown', e => {
-        if (e.key === 'ArrowRight') go(i + 1, {
-          autoplay: false
-        });
-        if (e.key === 'ArrowLeft') go(i - 1, {
-          autoplay: false
-        });
-      });
-
-      // Update active dot when user swipes
-      let rAF = null;
-      track.addEventListener('scroll', () => {
-        if (rAF) cancelAnimationFrame(rAF);
-        rAF = requestAnimationFrame(() => {
-          const idx = Math.round(track.scrollLeft / slideWidth());
-          if (idx !== i) {
-            i = idx;
-            updateDots();
-          }
-        });
-      });
-
-      // Keep position on resize
-      window.addEventListener('resize', () => {
-        if (rAF) cancelAnimationFrame(rAF);
-        rAF = requestAnimationFrame(() => go(i, {
-          autoplay: false
-        }));
-      });
-
-      // Autoplay only when visible
-      const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() :
-        stop()), {
-        threshold: 0.3
-      });
-      io.observe(viewport);
-
-      // Init
-      go(0);
     });
 
   </script>
