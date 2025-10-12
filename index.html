@@ -1006,29 +1006,6 @@
       flex-wrap: wrap;
     }
 
-    /* Bottom ribbon */
-    .service-ribbon {
-      margin-top: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
-    }
-
-    .service-ribbon .ribbon-right {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    /* Niceties for the CTA slide */
-    .slide-cta {
-      display: grid;
-      gap: 10px;
-      align-content: start;
-    }
-
     /* Two-column services card */
     .service-duo {
       display: grid;
@@ -1046,6 +1023,52 @@
       display: grid;
       gap: 10px;
       align-content: start;
+    }
+
+    /* Consistent vertical rhythm for Services */
+    .services .service-col p {
+      margin: 0 0 6px;
+      line-height: 1.6;
+    }
+
+    .services .service-col .list-checks {
+      margin: 0;
+      /* consistent gap after the paragraph */
+      padding-top: 2px;
+      /* prevents margin-collapsing & gives a tiny buffer */
+    }
+
+    .services .service-col .list-checks li {
+      margin: 8px 0;
+      /* equal spacing between bullets */
+    }
+
+    @media (min-width: 900px) {
+      .services .service-col p {
+        margin-bottom: 8px;
+      }
+
+      /* was 14px */
+      .services .service-col .list-checks {
+        margin-top: 0;
+        padding-top: 2px;
+      }
+
+      /* kill extra gap */
+      .services .service-col .list-checks li {
+        margin: 6px 0;
+      }
+
+      /* was 10px */
+      .services .service-cta-row {
+        margin-top: 16px;
+      }
+
+      /* slight space under card */
+    }
+
+    .services .service-col p+.list-checks {
+      margin-top: 0 !important;
     }
 
   </style>
@@ -1095,7 +1118,8 @@
             </h1>
             <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
               <a class="btn btn-white" href="#services">Services offered</a>
-              <a class="btn btn-ghost" href="mailto:ashish96puri@gmail.com">Email me</a>
+              <a class="btn btn-ghost" href="https://calendly.com/ashish96puri/30min">Book an intro
+                call</a>
             </div>
           </div>
         </div>
@@ -1103,7 +1127,6 @@
 
       <section id="services" class="services reveal delay-1">
         <h2>Services</h2>
-        <p class="service-sub">AI integration for your business processes — from idea to impact.</p>
 
         <div class="card service-duo">
           <!-- Left: AI Integrations -->
@@ -1143,19 +1166,6 @@
               <li>Experiment design</li>
             </ul>
           </article>
-        </div>
-        <div class="service-dots" id="services-dots" aria-label="Services pagination"></div>
-        <!-- Credibility ribbon -->
-        <div class="card service-ribbon">
-          <div class="ribbon-left">
-            <span class="pill">AI in production, not slides</span>
-          </div>
-          <div class="ribbon-right">
-            <a class="btn btn-ghost" href="#projects">See project outcomes</a>
-            <a class="btn btn-white"
-              href="mailto:ashish96puri@gmail.com?subject=AI%20for%20my%20business">Book an intro
-              call</a>
-          </div>
         </div>
       </section>
 
