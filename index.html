@@ -4,1668 +4,800 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- Primary SEO -->
-  <title>Freelance Data Scientist for Pricing & Forecasting | Berlin & Remote | Ashish Puri</title>
+  <title>LLM Integration for SaaS & Marketplaces | Ashish Puri</title>
   <meta name="description"
-    content="Freelance data scientist with 7+ years in dynamic pricing, ETA forecasting, marketing mix modeling & segmentation. Bolt, Delivery Hero, Blue Yonder, ZS." />
+    content="Ship reliable AI features built with large language models in 30 days: knowledge search, safety checks, quality tests, and EU-hosted deployments. Fixed-scope packages and clear success metrics." />
   <link rel="canonical" href="https://ashish96puri.github.io/" />
-  <meta name="robots" content="index, follow" />
-  <!-- If/when you verify in Search Console, paste the token below -->
-  <!-- <meta name="google-site-verification" content="PASTE_TOKEN_HERE" /> -->
-
-  <!-- Open Graph (for rich previews) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Ashish Puri" />
-  <meta property="og:title"
-    content="Freelance Data Scientist for Pricing & Forecasting | Berlin & Remote | Ashish Puri" />
+  <meta property="og:title" content="LLM Integration for SaaS & Marketplaces | Ashish Puri" />
   <meta property="og:description"
-    content="Freelance data scientist with 7+ years in dynamic pricing, ETA forecasting, marketing mix modeling & segmentation. Bolt, Delivery Hero, Blue Yonder, ZS." />
+    content="Ship reliable AI features built with large language models in 30 days: knowledge search, safety checks, quality tests, and EU-hosted deployments." />
   <meta property="og:url" content="https://ashish96puri.github.io/" />
-  <meta property="og:image" content="https://ashish96puri.github.io/assets/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt"
-    content="Ashish Puri — Freelance Data Scientist (Pricing & Forecasting)" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter Card -->
+  <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title"
-    content="Freelance Data Scientist for Pricing & Forecasting | Berlin & Remote | Ashish Puri" />
-  <meta name="twitter:description"
-    content="Freelance data scientist with 7+ years in dynamic pricing, ETA forecasting, marketing mix modeling & segmentation." />
-  <meta name="twitter:image" content="https://ashish96puri.github.io/assets/og-image.jpg" />
-
-  <!-- Brand/Theme -->
-  <meta name="theme-color" content="#0b1020" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet">
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-2: #0d1226;
-      --ink: #e6edf6;
-      --muted: #97a3b8;
-      --brand: #7ef0c1;
-      --brand-2: #6aa0ff;
-      --ring: rgba(106, 160, 255, .35);
-      --card: #0f172a;
-      --card-2: #111731;
-      --border: rgba(255, 255, 255, .08);
-      --max: 1100px;
-      --radius: 22px;
-      --shadow: 0 18px 50px rgba(0, 0, 0, .35);
+      --bg: #0b0c10;
+      --panel: #111317;
+      --muted: #7c8a9e;
+      --text: #e6edf3;
+      --brand: #7dd3fc;
+      --brand-2: #a78bfa;
+      --ok: #34d399;
+      --warn: #f59e0b;
+      --red: #ef4444;
+      --radius: 16px;
+      --shadow: 0 6px 24px rgba(0, 0, 0, .25);
     }
 
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f6f8fc;
-        --bg-2: #eef2ff;
-        --ink: #0f172a;
-        --muted: #475569;
-        --card: #ffffff;
-        --card-2: #f8fafc;
-        --border: rgba(15, 23, 42, .08);
-        --ring: rgba(53, 92, 255, .22);
-        --brand: #0fb;
-        --brand-2: #355cff
-      }
+    * {
+      box-sizing: border-box;
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box
-    }
-
-    /* Plain, seamless page background (no gradients) */
     html,
     body {
-      background: var(--bg);
-      /* switches automatically with light/dark via your :root media query */
-    }
-
-    html {
-      scroll-behavior: smooth
-    }
-
-    html {
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    html {
-      background-color: var(--bg-2);
-    }
-
-    .headline {
-      text-wrap: balance;
-    }
-
-    /* prettier multi-line titles */
-    .lead {
-      text-wrap: pretty;
-    }
-
-    body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background:
-        radial-gradient(1200px 800px at -10% -10%, rgba(126, 240, 193, .12), transparent 55%),
-        radial-gradient(900px 700px at 110% -10%, rgba(106, 160, 255, .12), transparent 55%),
-        linear-gradient(180deg, var(--bg), var(--bg-2));
-      color: var(--ink);
-    }
-
-    /* Decorative blurred blobs */
-    .bg-blur {
-      position: fixed;
-      inset: auto -200px -200px auto;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle at 30% 30%, var(--brand), transparent 60%);
-      filter: blur(60px);
-      opacity: .35;
-      pointer-events: none;
-      z-index: -1
-    }
-
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 26px
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
     }
 
     a {
-      color: inherit;
-      text-decoration: none
+      color: var(--brand);
+      text-decoration: none;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: .55rem;
-      padding: 0.9rem 1.1rem;
-      border-radius: 16px;
-      font-weight: 700;
-      border: 1px solid var(--border);
-      transition: transform .08s ease, box-shadow .25s ease, opacity .2s ease
+    a:hover {
+      text-decoration: underline;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, .25)
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      color: #0b1020;
-      border-color: transparent
-    }
-
-    .btn-ghost {
-      background: transparent
-    }
-
-    /* White button variant */
-    .btn-white {
-      background: #fff;
-      /* plain white */
-      color: #0b1020;
-      /* solid dark text */
-      border: 1px solid var(--border);
-      /* keep your subtle border */
-      background-image: none;
-      /* kill any gradients */
-    }
-
-    .btn-white:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
-    }
-
-    .btn-white:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px var(--ring);
-      /* accessible focus */
+    .container {
+      width: min(1100px, 92vw);
+      margin: 0 auto;
     }
 
     header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(120%) blur(8px);
+      background: rgba(11, 12, 16, .6);
+      border-bottom: 1px solid #1f2937;
+      z-index: 50;
+    }
+
+    .nav {
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      gap: 12px
+      padding: 14px 0;
     }
 
-    .brand {
+    .nav a.brand {
+      font-weight: 700;
+      letter-spacing: .2px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .nav ul {
+      list-style: none;
       display: flex;
+      gap: 18px;
+      padding: 0;
+      margin: 0;
       align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      letter-spacing: .3px
     }
 
-    .brand svg {
-      width: 28px;
-      height: 28px
+    .nav ul a {
+      color: var(--muted);
+      font-weight: 500;
     }
 
-    nav a {
-      opacity: .9;
-      padding: 10px 12px;
-      border-radius: 12px
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #000;
+      font-weight: 700;
+      letter-spacing: .3px;
+      box-shadow: var(--shadow);
     }
 
-    nav a:hover {
-      background: rgba(255, 255, 255, .06)
+    .btn.secondary {
+      background: #1f2937;
+      color: var(--text);
+      box-shadow: none;
+      border: 1px solid #2b3340;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 28px;
-      align-items: center
+      gap: 18px;
     }
 
-    @media (max-width: 940px) {
-      .grid {
-        grid-template-columns: 1fr
-      }
-    }
-
-    /* HERO */
     .hero {
-      margin-top: 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, 0)), var(--card);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      position: relative
+      padding: 54px 0 36px;
     }
 
-    .hero-inner {
-      padding: 32px
-    }
-
-    /* Headline container */
-    .headline {
-      font-size: clamp(28px, 5vw, 30px);
-      font-weight: 700;
-      line-height: 1.15;
-      margin: .4rem 0 .6rem;
-      overflow: visible;
-      /* avoid clipping in WebKit */
-    }
-
-    /* Keep "7+ years of" on one line */
-    .headline .topline {
-      display: block;
-      white-space: nowrap;
-    }
-
-    /* Force the next two lines */
-    .headline .line {
-      display: block;
-    }
-
-    /* Highlighted number */
-    .headline em {
-      display: inline-block;
-      font-family: "Playfair Display", serif;
-      font-weight: 700;
-      font-style: normal;
-      background: linear-gradient(135deg, var(--brand-2), var(--brand));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      line-height: 1.08;
-      padding-block: 4px 2px;
-      /* breathing room to avoid crop */
-      font-size: clamp(30px, 8vw, 32px);
-      /* bigger than the rest */
-    }
-
-    /* The word "of" matches normal headline text (white) */
-    .headline .of {
-      font: inherit;
-      color: inherit;
-      background: none;
-      -webkit-text-fill-color: currentColor;
-      margin-left: .35ch;
-      /* subtle gap after the number */
-    }
-
-    /* If the hero container clips the top, give it a few extra pixels */
-    .hero-inner {
-      padding-top: 32px;
-    }
-
-    /* optional, only if trimming occurs */
-    .lead {
-      font-size: clamp(16px, 2.2vw, 20px);
+    .hero .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border: 1px solid #2b3340;
       color: var(--muted);
-      max-width: 62ch
+      border-radius: 999px;
+      background: #0f1115;
+      font-size: 12px;
     }
 
-    /* Photo card */
-    .photo-card {
-      position: relative;
+    .hero h1 {
+      margin: 14px 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.1;
+      letter-spacing: .2px;
+    }
+
+    .hero p {
+      color: #c5ced8;
+      font-size: 17px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid #202634;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+    }
+
+    .kpis {
       display: grid;
-      place-items: center;
-      padding: 26px
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
     }
 
-    /* keep the ring perfectly circular */
-    :root {
-      --ring-size: 260px;
-      --ring-inset: 12px;
+    .kpis .panel {
+      text-align: center;
     }
 
-    .photo-ring {
-      position: relative;
-      width: var(--ring-size);
-      aspect-ratio: 1 / 1;
-      /* <- ensures a square */
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(126, 240, 193, .3), rgba(106, 160, 255, .18));
-      border: 1px solid var(--border);
-      box-shadow: inset 0 0 0 10px rgba(255, 255, 255, .02), 0 20px 40px rgba(0, 0, 0, .25);
+    .kpis .num {
+      font-size: 24px;
+      font-weight: 800;
     }
 
-    .photo-ring::after {
-      content: "";
-      position: absolute;
-      inset: -10px;
-      border-radius: 50%;
-      background: conic-gradient(from 0deg, var(--brand), var(--brand-2), var(--brand));
-      filter: blur(18px);
-      opacity: .35;
-      z-index: -1;
-    }
-
-    /* photo fills the ring */
-    .photo {
-      position: absolute;
-      inset: var(--ring-inset);
-      border-radius: 50%;
-      overflow: hidden;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(180deg, #0e162f, #0b1020);
-    }
-
-    /* actual image */
-    .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Subtle, smooth background glow */
-    :root {
-      --glow-opacity: .10;
-      /* lower = subtler (try .10 or .08) */
-      --glow-blur: 120px;
-      /* higher = smoother */
-      --glow-inset: -70px;
-      /* how far the glow extends beyond the ring */
-    }
-
-    .photo-card {
-      position: relative;
-      isolation: isolate;
-    }
-
-    .photo-card::before {
-      content: "";
-      position: absolute;
-      inset: var(--glow-inset);
-      border-radius: 50%;
-      background:
-        radial-gradient(52% 52% at 50% 55%, var(--brand) 0%, transparent 60%),
-        radial-gradient(52% 52% at 50% 45%, var(--brand-2) 0%, transparent 60%);
-      filter: blur(var(--glow-blur));
-      opacity: var(--glow-opacity);
-      mix-blend-mode: soft-light;
-      /* gentler than 'screen' */
-      z-index: -1;
-
-      /* soft feathering */
-      -webkit-mask-image: radial-gradient(55% 55% at 50% 50%, #000 60%, transparent 85%);
-      mask-image: radial-gradient(55% 55% at 50% 50%, #000 60%, transparent 85%);
-
-      animation: aurora 28s ease-in-out infinite alternate;
-    }
-
-    @keyframes aurora {
-      0% {
-        transform: translateY(2px) scale(0.995);
-      }
-
-      100% {
-        transform: translateY(0) scale(1.005);
-      }
-    }
-
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      .photo-card::before {
-        animation: none;
-      }
-    }
-
-    /* Sections */
     section {
-      padding: 22px 0
+      padding: 42px 0;
     }
 
     h2 {
-      font-size: clamp(22px, 3.2vw, 30px);
-      margin: 0 0 10px
+      font-size: 26px;
+      margin: 0 0 14px;
     }
 
-    /* Projects */
-    .projects {
+    h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+
+    .cards {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
     }
 
     .card {
-      grid-column: span 12;
-      background: var(--card-2);
-      border: 1px solid var(--border);
-      border-radius: 18px;
+      background: var(--panel);
+      border: 1px solid #202634;
+      border-radius: var(--radius);
       padding: 18px;
-      transition: transform .08s ease, box-shadow .25s ease
+      box-shadow: var(--shadow);
     }
 
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(0, 0, 0, .28)
+    .card ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: #c5ced8;
     }
 
-    .card h3 {
-      margin: .4rem 0 .2rem
+    .price {
+      color: var(--ok);
+      font-weight: 700;
     }
 
-    .card p {
-      color: var(--muted)
+    .muted {
+      color: var(--muted);
     }
 
-    .tags {
+    .stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px
-    }
-
-    .tag {
-      font-size: .8rem;
-      color: var(--brand-2);
-      background: rgba(106, 160, 255, .12);
-      padding: .25rem .55rem;
-      border-radius: 999px;
-      border: 1px solid var(--ring)
-    }
-
-    @media (min-width: 860px) {
-      .card {
-        grid-column: span 4
-      }
-    }
-
-    /* Animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .6s ease, transform .6s ease
-    }
-
-    .reveal.on {
-      opacity: 1;
-      transform: none
-    }
-
-    .delay-1 {
-      transition-delay: .05s
-    }
-
-    .delay-2 {
-      transition-delay: .12s
-    }
-
-    .delay-3 {
-      transition-delay: .2s
-    }
-
-    .delay-4 {
-      transition-delay: .28s
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      .reveal,
-      .reveal.on {
-        opacity: 1;
-        transform: none;
-        transition: none
-      }
-
-      html {
-        scroll-behavior: auto
-      }
-    }
-
-    footer {
-      padding: 28px 0 46px;
-      color: var(--muted)
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap
+      gap: 10px;
+      margin-top: 8px;
     }
 
     .pill {
-      display: inline-flex;
-      gap: .45rem;
-      align-items: center;
-      padding: .45rem .7rem;
+      border: 1px solid #2b3340;
+      color: #c5ced8;
+      padding: 6px 10px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, .06);
-      border: 1px solid var(--border)
-    }
-
-    /* Accessibility */
-    .skip a {
-      position: absolute;
-      left: -9999px
-    }
-
-    .skip a:focus {
-      left: 12px;
-      top: 12px;
-      background: #fff;
-      color: #000;
-      padding: .5rem .75rem;
-      border-radius: 10px;
-      z-index: 1000
-    }
-
-    /* Keeps content above overlays */
-    .wrap {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Soft bottom blend—fixed, overscanned, no tiling seams */
-    .page-bottom-glow {
-      position: fixed;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      height: 45vh;
-      pointer-events: none;
-      z-index: 0;
-      background: radial-gradient(1200px 700px at 50% 120%, rgba(126, 240, 193, .08), transparent 60%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .03));
-    }
-
-    /* Logo wall */
-    .logo-wall {
-      padding: 22px 0
-    }
-
-    .logo-wall h2 {
-      margin-bottom: 6px
-    }
-
-    .logo-sub {
-      color: var(--muted);
-      margin: 0 0 12px
+      background: #0f1115;
+      font-size: 12px;
     }
 
     .logos {
       display: grid;
-      grid-template-columns: repeat(6, minmax(90px, 1fr));
-      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
       align-items: center;
     }
 
-    @media (max-width: 1024px) {
-      .logos {
-        grid-template-columns: repeat(4, 1fr)
-      }
+    .logos .logo {
+      background: #0f1115;
+      border: 1px dashed #2b3340;
+      border-radius: 12px;
+      padding: 14px;
+      text-align: center;
+      color: #a5b4c3;
+      font-size: 14px;
     }
 
-    @media (max-width: 640px) {
-      .logos {
-        grid-template-columns: repeat(3, 1fr)
-      }
-    }
-
-    .logo {
+    /* process flow */
+    .process-flow {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 82px;
-      padding: 14px 18px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: var(--card-2);
-      transition: transform .08s ease, box-shadow .25s ease, filter .2s ease, opacity .2s ease;
+      align-items: stretch;
+      gap: 12px;
     }
 
-    .logo:hover {
-      transform: translateY(-2px);
+    .flow-step {
+      position: relative;
+      flex: 1;
+      background: var(--panel);
+      border: 1px solid #202634;
+      border-radius: var(--radius);
+      padding: 16px;
       box-shadow: var(--shadow);
     }
 
-    .logo img,
-    .logo svg {
-      max-width: 100%;
-      max-height: 38px;
-      display: block;
-      filter: grayscale(1) contrast(1.05);
-      opacity: .9;
-    }
-
-    .logo:hover img,
-    .logo:hover svg {
-      filter: none;
-      opacity: 1
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .logo .invert-dark {
-        filter: invert(1) grayscale(1) contrast(1.05);
-      }
-    }
-
-    /* Lock theme to DARK across all devices */
-    :root {
-      color-scheme: dark;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #0b1020;
-        --bg-2: #0d1226;
-        --ink: #e6edf6;
-        --muted: #97a3b8;
-        --card: #0f172a;
-        --card-2: #111731;
-        --border: rgba(255, 255, 255, .08);
-        --brand: #7ef0c1;
-        --brand-2: #6aa0ff;
-        --ring: rgba(106, 160, 255, .35);
-      }
-    }
-
-    /* ===================== */
-    /* INTERACTIVE PROJECTS  */
-    /* ===================== */
-
-    /* Danger color for MAE down */
-    :root {
-      --danger: #ff6b6b;
-      --danger-bg: rgba(255, 107, 107, .12);
-      --danger-ring: rgba(255, 107, 107, .35);
-    }
-
-    /* Lock content area and overlay panes (no height jump, no overflow) */
-    .card.impact-switch {
-      position: relative;
-      overflow: visible;
-    }
-
-    .card.impact-switch .proj-head {
-      margin: .4rem 0 .2rem;
-    }
-
-    .switch-body {
-      position: relative;
-      overflow: hidden;
-      height: var(--panel-h, auto);
-    }
-
-    /* Overlay the panes so they REPLACE each other */
-    .switch-body .pane {
+    .flow-step::before {
+      content: attr(data-step);
       position: absolute;
-      inset: 0;
-      box-sizing: border-box;
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity 320ms cubic-bezier(.2, .8, .2, 1),
-        transform 320ms cubic-bezier(.2, .8, .2, 1);
-      pointer-events: none;
-      /* prevent clipping from collapsed margins in children */
-      padding: 0;
-      display: block;
-    }
-
-    .switch-body .pane.show {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .switch-body .pane.show {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    /* Accurate measuring mode (temporarily disables overlay) */
-    .switch-body.measuring .pane {
-      position: static !important;
-      opacity: 1 !important;
-      transform: none !important;
-      pointer-events: auto !important;
-      padding-bottom: 14px !important;
-      /* keep measurement accurate */
-    }
-
-    /* Hover cue: subtle arrow only on hover-capable devices */
-    .hover-arrow {
-      position: absolute;
-      right: 12px;
-      top: 12px;
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      border: 1px solid var(--ring);
+      top: -12px;
+      left: 12px;
+      width: 28px;
+      height: 28px;
       display: grid;
       place-items: center;
-      opacity: 0;
-      transform: translateY(-4px);
-      transition: transform .28s cubic-bezier(.2, .8, .2, 1), opacity .24s ease, box-shadow .24s ease, background-color .24s ease;
-      background: rgba(255, 255, 255, .04);
-      pointer-events: auto;
-      cursor: pointer;
-      z-index: 3;
+      border-radius: 999px;
+      background: #0f1115;
+      border: 1px solid #2b3340;
+      font-weight: 800;
     }
 
-    .hover-arrow:active {
-      transform: translateY(0) scale(.96);
+    .flow-step .bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
     }
 
-    /* Keep arrow visible on touch when open + reverse direction */
-    .card.impact-switch[data-open="true"] .hover-arrow {
-      opacity: .9;
-      transform: translateY(0);
+    .flow-step h3 {
+      margin: 6px 0 6px;
+      font-size: 16px;
     }
 
-    /* default + smooth tween via CSS var */
-    .card.impact-switch {
-      --arrow-base: -45deg;
-      --arrow-spin: 0turn;
+    .flow-step p {
+      margin: 0;
+      color: #c5ced8;
     }
 
-    .hover-arrow::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-right: 2px solid currentColor;
-      border-bottom: 2px solid currentColor;
-      transform: rotate(calc(var(--arrow-base) + var(--arrow-spin)));
-      will-change: transform;
-      transition: transform .45s cubic-bezier(.2, .8, .2, 1);
+    .flow-arrow {
+      display: grid;
+      place-items: center;
+      min-width: 32px;
+      font-size: 22px;
+      color: var(--muted);
     }
 
-    @media (hover:hover) {
-      .card.impact-switch:hover .hover-arrow {
-        opacity: .9;
-        transform: translateY(0);
-        box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+    @media (max-width: 860px) {
+      .process-flow {
+        flex-direction: column;
+      }
+
+      .flow-arrow {
+        transform: rotate(90deg);
       }
     }
 
-    /* Full-card toggle target */
-    .card-toggle {
-      position: absolute;
-      inset: 0;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      color: inherit;
+    .faq details {
+      background: var(--panel);
+      border: 1px solid #202634;
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      color: #9aa7b8;
+      padding: 32px 0 48px;
+      border-top: 1px solid #1c2230;
+    }
+
+    .two {
+      grid-template-columns: 1.2fr .8fr;
+    }
+
+    @media (max-width: 860px) {
+      .two {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* simple mobile nav */
+    .hamburger {
+      display: none;
+      border: 1px solid #2b3340;
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--muted);
+      background: #0f1115;
+    }
+
+    @media (max-width: 680px) {
+      .nav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: inline-block;
+      }
+
+      .nav.open ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 58px;
+        right: 4vw;
+        background: #0f1115;
+        border: 1px solid #2b3340;
+        border-radius: 12px;
+        padding: 12px;
+        width: 220px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav.open ul a {
+        padding: 8px 6px;
+      }
+    }
+
+    /* code/mono */
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: #d1d9e6;
+      background: #0f1115;
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid #2b3340;
+    }
+
+    /* nav button specificity fix */
+    .nav ul a.btn {
+      color: #000 !important;
+    }
+
+    /* process flow visual fixes */
+    .flow-step {
+      padding-top: 22px;
+    }
+
+    .flow-step::before {
       z-index: 2;
     }
 
-    .card-toggle:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 4px var(--ring);
-      border-radius: 16px;
-    }
-
-    /* when impact is open, disable the overlay so scroller can be used */
-    .card.impact-switch[data-open="true"] .card-toggle {
-      pointer-events: none;
-    }
-
-    /* Horizontal KPI scroller */
-    .kpi-scroller {
-      display: flex;
-      gap: 10px;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x proximity;
-      padding-bottom: 6px;
-      touch-action: pan-x;
-      /* enable horizontal swipe on touch */
-      scroll-behavior: smooth;
-    }
-
-    .kpi-scroller::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .kpi-scroller::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, .18);
-      border-radius: 8px;
-    }
-
-    .kpi {
-      flex: 0 0 220px;
-      scroll-snap-align: start;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 10px 12px;
-    }
-
-    .kpi .label {
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    .kpi .value {
-      font-weight: 800;
-      font-variant-numeric: tabular-nums;
-      margin-top: 4px;
-    }
-
-    /* Direction arrows */
-    .dir {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 6px;
-      font-size: .85rem;
-      border: 1px solid var(--ring);
-      border-radius: 999px;
-      padding: 2px 8px;
-    }
-
-    .dir .tri {
-      width: 0;
-      height: 0;
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      display: inline-block;
-    }
-
-    .dir.up {
-      color: var(--brand);
-      background: rgba(126, 240, 193, .08);
-    }
-
-    .dir.up .tri {
-      border-bottom: 8px solid currentColor;
-    }
-
-    .dir.down {
-      color: var(--brand-2);
-      background: rgba(106, 160, 255, .08);
-    }
-
-    .dir.down .tri {
-      border-top: 8px solid currentColor;
-    }
-
-    .dir.danger {
-      color: var(--danger);
-      background: var(--danger-bg);
-      border-color: var(--danger-ring);
-    }
-
-    /* avoid collapsed margins clipping inside panes */
-    .switch-body .pane> :first-child {
-      margin-top: 0;
-    }
-
-    .switch-body .pane> :last-child {
-      margin-bottom: 0;
-    }
-
-    .switch-body .pane p {
-      margin: 0 0 10px;
-    }
-
-    .subhead {
-      font-size: .8rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin: 0 0 8px;
-    }
-
-    /* small vertical gap below the title */
-    .proj-head+.switch-body {
-      margin-top: 6px;
-    }
-
-    /* breathing room inside the panes */
-    .switch-body .pane p {
-      margin: 0 0 10px;
-    }
-
-    .switch-body .pane .subhead {
-      margin: 0 0 8px;
-    }
-
-    .switch-body .pane .tags {
-      margin-top: 8px;
-    }
-
-    /* Services section */
-    .services {
-      padding-top: 28px;
-    }
-
-    .services .service-sub {
-      color: var(--muted);
-      margin: 0 0 12px;
-    }
-
-    /* Mini heading row with icon */
-    .service-head {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .service-head h3 {
-      margin: 0;
-    }
-
-    /* Soft gradient icon chip */
-    .service-icon {
-      display: inline-grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: radial-gradient(120% 120% at 20% 20%, rgba(126, 240, 193, .18), rgba(106, 160, 255, .10));
-    }
-
-    /* Check list */
-    .list-checks {
-      margin: 10px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .list-checks li {
-      display: grid;
-      grid-template-columns: 16px 1fr;
-      gap: 8px;
-      align-items: start;
-      margin: 6px 0;
-    }
-
-    .list-checks li::before {
-      content: "";
-      width: 10px;
-      height: 6px;
-      border-left: 2px solid var(--brand);
-      border-bottom: 2px solid var(--brand);
-      transform: rotate(-45deg);
-      margin-top: 6px;
-    }
-
-    CTA row inside card .service-cta {
-      margin-top: 12px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    /* Two-column services card */
-    .service-duo {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    @media (min-width: 900px) {
-      .service-duo {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .service-col {
-      display: grid;
-      gap: 10px;
-      align-content: start;
-    }
-
-    /* Consistent vertical rhythm for Services */
-    .services .service-col p {
-      margin: 0 0 6px;
-      line-height: 1.6;
-    }
-
-    .services .service-col .list-checks {
-      margin: 0;
-      /* consistent gap after the paragraph */
-      padding-top: 2px;
-      /* prevents margin-collapsing & gives a tiny buffer */
-    }
-
-    .services .service-col .list-checks li {
-      margin: 8px 0;
-      /* equal spacing between bullets */
-    }
-
-    @media (min-width: 900px) {
-      .services .service-col p {
-        margin-bottom: 8px;
-      }
-
-      /* was 14px */
-      .services .service-col .list-checks {
-        margin-top: 0;
-        padding-top: 2px;
-      }
-
-      /* kill extra gap */
-      .services .service-col .list-checks li {
-        margin: 6px 0;
-      }
-
-      /* was 10px */
-      .services .service-cta-row {
-        margin-top: 16px;
-      }
-
-      /* slight space under card */
-    }
-
-    .services .service-col p+.list-checks {
-      margin-top: 0 !important;
-    }
-
-    .link-underline {
-      text-decoration: underline;
-      text-underline-offset: 2px;
-      text-decoration-thickness: 1.5px;
+    .flow-step .bar {
+      top: 8px;
+      z-index: 1;
     }
 
   </style>
 </head>
 
 <body>
-  <div class="skip"><a href="#content">Skip to content</a></div>
-  <div class="wrap">
-    <header class="reveal delay-1">
-      <div class="brand" aria-label="Home">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M12 2l3.5 7.2L23 10l-5.5 5.2L18.5 22 12 18.6 5.5 22l1-6.8L1 10l7.5-.8L12 2z"
-            stroke="currentColor" stroke-width="1.2" />
-        </svg>
-        <span>Ashish&nbsp;Puri</span>
-      </div>
-      <nav aria-label="Primary">
-        <a href="#projects">Projects</a>
-        <a href="#companies">Companies</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+  <header>
+    <div class="container nav" id="nav">
+      <a class="brand" href="#">Ashish Puri</a>
+      <button class="hamburger" aria-label="Menu"
+        onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+      <ul>
+        <li><a href="#offers">Offers</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#cases">Case studies</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="btn" href="https://calendly.com/ashish96puri/30min">Book intro call</a></li>
+      </ul>
+    </div>
+  </header>
 
-    <main id="content">
-      <section class="hero reveal delay-2">
-        <div class="hero-inner grid">
-          <!-- PHOTO FIRST (as requested) -->
-          <div class="photo-card">
-            <div class="photo-ring">
-              <div class="photo" aria-hidden="true">
-                <img src="/assets/ashish.png" alt="Portrait of Ashish Puri" width="600" height="600"
-                  style="width:100%;height:100%;object-fit:cover;display:block;" loading="eager"
-                  decoding="async" fetchpriority="high" />
-              </div>
-            </div>
+  <main>
+    <section class="hero">
+      <div class="container grid two">
+        <div>
+          <span class="tag">AI with large language models • Knowledge search • Safety checks •
+            Quality tests • Hosted in the EU</span>
+          <h1>Ship one reliable AI workflow in <span
+              style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">30
+              days</span></h1>
+          <p>Practical, production-ready AI features for SaaS and marketplaces. We build search over
+            your documents, add safety checks and policy rules, put in place a simple test suite to
+            measure quality and cost, and deploy inside your cloud in the EU.</p>
+          <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
+            <a class="btn" href="https://calendly.com/ashish96puri/30min">Book intro call</a>
+            <a class="btn secondary" href="#offers">See packages</a>
           </div>
-
-          <!-- SUMMARY + CTA -->
-          <div>
-            <h1 class="headline">
-              <span class="topline">
-                <em>7+ years</em><span class="of">&nbsp;of</span>
-              </span>
-              <span class="line">integrating AI</span>
-              <span class="line">with business processes.</span>
-            </h1>
-            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px">
-              <a class="btn btn-white" href="#services">Services offered</a>
-              <a class="btn btn-ghost" href="https://calendly.com/ashish96puri/30min">Book an intro
-                call</a>
+          <div class="kpis">
+            <div class="panel">
+              <div class="num">30 days</div>
+              <div class="muted">Pilot to prod</div>
+            </div>
+            <div class="panel">
+              <div class="num">EU hosted</div>
+              <div class="muted">Runs inside your cloud</div>
+            </div>
+            <div class="panel">
+              <div class="num">Transparent</div>
+              <div class="muted">Fixed scope & pricing</div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="services" class="services reveal delay-1">
-        <h2>Services</h2>
-
-        <div class="card service-duo">
-          <!-- Left: AI Integrations -->
-          <article class="service-col">
-            <div class="service-head">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22">
-                  <path d="M6 8h12M6 12h12M6 16h8" stroke="currentColor" fill="none"
-                    stroke-width="1.2" />
-                </svg>
-              </span>
-              <h3>AI Integrations</h3>
-            </div>
-            <p>Plug AI into your tools with safety, monitoring, and guardrails.</p>
-            <ul class="list-checks">
-              <li>LLM/RAG for support & docs</li>
-              <li>Workflow automation & agents</li>
-              <li>PII handling & evaluation harness</li>
+        <div>
+          <div class="panel">
+            <h3 style="margin-top:0">What you get</h3>
+            <ul>
+              <li>Search over your knowledge-base that actually works: sensible document splits,
+                strong indexing, and re-ranking so answers are accurate.</li>
+              <li>Safety checks: validate inputs and outputs, protect personal data, enforce your
+                content rules, and provide safe fallbacks.</li>
+              <li>Quality tests: a small, clear test suite and limited live rollouts with pass/fail
+                rules.</li>
+              <li>Cost control: caching, reusable instructions for the model, automatic model
+                selection, and a simple usage dashboard.</li>
+              <li>Runs in your own cloud accounts in EU data centers or on your own servers.</li>
             </ul>
-          </article>
-
-          <!-- Right: Forecasting & Pricing -->
-          <article class="service-col">
-            <div class="service-head">
-              <span class="service-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="22" height="22">
-                  <path d="M4 16l5-5 3 3 6-7" stroke="currentColor" fill="none"
-                    stroke-width="1.2" />
-                </svg>
-              </span>
-              <h3>Forecasting & Pricing</h3>
+            <div class="stack">
+              <span class="pill">Knowledge search</span><span class="pill">APIs or
+                open-source</span><span class="pill">Quality tests</span><span class="pill">Safety
+                checks</span><span class="pill">Model routing</span><span class="pill">Search
+                index</span>
             </div>
-            <p>Time-series, demand modeling, and optimization techniques.</p>
-            <ul class="list-checks">
-              <li>Marketing Mix Modeling, ETAs, stock-out prediction</li>
-              <li>Dynamic pricing / surge</li>
-              <li>Experiment design</li>
-            </ul>
-          </article>
+          </div>
         </div>
-      </section>
-
-      <section id="projects" class="reveal delay-2">
-        <h2>Delivered Projects</h2>
-        <div class="projects">
-
-          <!-- Original Project B -->
-          <article class="card impact-switch reveal delay-1" data-open="false">
-            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
-            <div class="muted">Forecasting for Logistics</div>
-            <h3 class="proj-head">ETA of ordered food</h3>
-
-            <div class="switch-body">
-              <!-- SUMMARY (visible initially) -->
-              <div class="pane summary show">
-                <p>Engineered high-performance ML models to forecast order preparation and delivery
-                  times.</p>
-                <div class="tags"><span class="tag">Airflow</span><span
-                    class="tag">Sagemaker</span><span class="tag">LightGBM</span></div>
-              </div>
-
-              <!-- IMPACT (hidden initially) -->
-              <div class="pane impact">
-                <div class="subhead">Business impact</div>
-                <div class="kpi-scroller" role="list">
-                  <div class="kpi" role="listitem">
-                    <div class="label">On-time deliveries</div>
-                    <div class="value">+6.2 pp</div>
-                    <span class="dir up"><span class="tri"></span><span>+9.8%</span></span>
-                  </div>
-
-                  <div class="kpi" role="listitem">
-                    <div class="label">ETA MAE</div>
-                    <div class="value">−1.3 min</div>
-                    <!-- red downward arrow per spec -->
-                    <span class="dir down danger"><span
-                        class="tri"></span><span>−10.4%</span></span>
-                  </div>
-
-                  <div class="kpi" role="listitem">
-                    <div class="label">Support tickets / 1k orders</div>
-                    <div class="value">-2.6 pp</div>
-                    <span class="dir down danger"><span class="tri"></span><span>−18%</span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Whole-card toggle (no visible text) -->
-            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
-          </article>
-
-          <!-- Original Project B -->
-          <article class="card impact-switch reveal delay-2" data-open="false">
-            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
-            <div class="muted">Dynamic Pricing</div>
-            <h3 class="proj-head">Automated time-based surge multipliers</h3>
-
-            <div class="switch-body">
-              <!-- SUMMARY -->
-              <div class="pane summary show">
-                <p>Developed an automated system for calculating surge multipliers to maximize
-                  driver earning in ride-hailing.</p>
-                <div class="tags">
-                  <span class="tag">Optimization</span><span class="tag">Pricing</span><span
-                    class="tag">Elasticity modelling</span>
-                </div>
-              </div>
-
-              <!-- KPIs -->
-              <div class="pane impact">
-                <div class="subhead">Business impact</div>
-                <div class="kpi-scroller" role="list">
-                  <div class="kpi" role="listitem">
-                    <div class="label">Quarterly driver earnings</div>
-                    <div class="value">+5.5%</div>
-                    <span class="dir up"><span class="tri"></span><span>+7.2%</span></span>
-                  </div>
-                  <div class="kpi" role="listitem">
-                    <div class="label">Order Fill Rate</div>
-                    <div class="value">+1.2%</div>
-                    <span class="dir up"><span class="tri"></span><span>+4.6%</span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
-          </article>
-
-          <!-- Original Project C -->
-          <article class="card impact-switch reveal delay-3" data-open="false">
-            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
-            <div class="muted">Optimization</div>
-            <h3 class="proj-head">Optimizing order dispatch timing</h3>
-
-            <div class="switch-body">
-              <!-- SUMMARY -->
-              <div class="pane summary show">
-                <p>Built an optimization solution to determine dispatch timing based on real-time
-                  demand–supply imbalance.</p>
-                <div class="tags"><span class="tag">Optimization</span><span
-                    class="tag">Real-time</span></div>
-              </div>
-
-              <!-- KPIs -->
-              <div class="pane impact">
-                <div class="subhead">Business impact</div>
-                <div class="kpi-scroller" role="list">
-                  <div class="kpi" role="listitem">
-                    <div class="label">Courier wasted time</div>
-                    <div class="value">−4 min</div>
-                    <span class="dir down danger"><span class="tri"></span><span>−8 %</span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
-          </article>
-
-          <!-- Original Project D -->
-          <article class="card impact-switch reveal delay-4" data-open="false">
-            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
-            <div class="muted">Segmentation</div>
-            <h3 class="proj-head">Customer behaviour analysis</h3>
-
-            <div class="switch-body">
-              <!-- SUMMARY -->
-              <div class="pane summary show">
-                <p>Used an unsupervised approach (K-means with PCA) to cluster customers by behavior
-                  and channel preference. The solution became a ZS proprietary asset.</p>
-                <div class="tags">
-                  <span class="tag">K-means</span><span class="tag">PCA</span><span
-                    class="tag">Segmentation</span>
-                </div>
-              </div>
-
-              <!-- KPIs -->
-              <div class="pane impact">
-                <div class="subhead">Business impact</div>
-                <div class="kpi-scroller" role="list">
-                  <div class="kpi" role="listitem">
-                    <div class="label">Brands leveraging asset</div>
-                    <div class="value">5</div>
-                    <span class="dir up"><span class="tri"></span><span>+5 brands</span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
-          </article>
-
-          <!-- Original Project E -->
-          <article class="card impact-switch reveal delay-5" data-open="false">
-            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
-            <div class="muted">Recommendation system</div>
-            <h3 class="proj-head">Content Recommender</h3>
-
-            <div class="switch-body">
-              <!-- SUMMARY -->
-              <div class="pane summary show">
-                <p>Used a Hybrid Collaborative Filtering approach backed by a Marketing Mix Model to
-                  identify content a customer is most likely to engage with.</p>
-                <div class="tags">
-                  <span class="tag">Hybrid CF</span><span class="tag">MMM</span>
-                </div>
-              </div>
-
-              <!-- KPIs -->
-              <div class="pane impact">
-                <div class="subhead">Business impact</div>
-                <div class="kpi-scroller" role="list">
-                  <div class="kpi" role="listitem">
-                    <div class="label">Customer engagement</div>
-                    <div class="value">+30 pp</div>
-                    <span class="dir up"><span class="tri"></span><span>+42%</span></span>
-                  </div>
-                  <div class="kpi" role="listitem">
-                    <div class="label">Brand revenue</div>
-                    <div class="value">+10 pp</div>
-                    <span class="dir up"><span class="tri"></span><span>+12%</span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
-          </article>
-
-          <!-- Original Project E -->
-          <article class="card impact-switch reveal delay-6" data-open="false">
-            <button class="hover-arrow" type="button" aria-label="Show business impact"></button>
-            <div class="muted">Inventory</div>
-            <h3 class="proj-head">Stock-out Prediction</h3>
-
-            <div class="switch-body">
-              <!-- SUMMARY -->
-              <div class="pane summary show">
-                <p>Built a deep-learning model using TensorFlow components to predict when an item
-                  will stock out.</p>
-                <div class="tags">
-                  <span class="tag">TensorFlow</span><span class="tag">Deep Learning</span>
-                </div>
-              </div>
-
-              <!-- KPIs -->
-              <div class="pane impact">
-                <div class="subhead">Business impact</div>
-                <div class="kpi-scroller" role="list">
-                  <div class="kpi" role="listitem">
-                    <div class="label">Order cancellations</div>
-                    <div class="value">−16 pp</div>
-                    <span class="dir down danger"><span class="tri"></span><span>−18%</span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <button class="card-toggle" type="button" aria-label="Toggle business impact"></button>
-          </article>
-        </div>
-      </section>
-
-      <section id="companies" class="logo-wall reveal delay-3" aria-labelledby="companies-title">
-        <h2 id="companies-title">Previously at</h2>
-        <p class="logo-sub">Teams I’ve built ML pipelines with</p>
-
-        <div class="logos" role="list">
-          <a class="logo" role="listitem" href="https://bolt.eu" target="_blank"
-            rel="noopener noreferrer" aria-label="Bolt">
-            <img src="/assets/logos/bolt.svg" alt="Bolt" loading="lazy" decoding="async">
-          </a>
-
-          <a class="logo" role="listitem" href="https://www.deliveryhero.com" target="_blank"
-            rel="noopener noreferrer" aria-label="Delivery Hero">
-            <img src="/assets/logos/dh.png" alt="Delivery Hero" loading="lazy" decoding="async">
-          </a>
-
-          <a class="logo" role="listitem" href="https://blueyonder.com" target="_blank"
-            rel="noopener noreferrer" aria-label="Blue Yonder">
-            <img src="/assets/logos/blueyonder.svg" alt="Blue Yonder" loading="lazy"
-              decoding="async">
-          </a>
-
-          <a class="logo" role="listitem" href="https://www.zs.com" target="_blank"
-            rel="noopener noreferrer" aria-label="ZS Associates">
-            <img src="/assets/logos/zs.svg" alt="ZS Associates" loading="lazy" decoding="async">
-          </a>
-        </div>
-      </section>
-
-      <section id="contact" class="reveal delay-4">
-        <h2>Contact</h2>
-        <div class="card">
-          <p>Send an email to: <a href="mailto:ashish96puri@gmail.com">ashish96puri@gmail.com</a> or
-            simply book an intro call <a href="https://calendly.com/ashish96puri/30min"
-              class="link-underline">here</a>.
-          </p>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div class="footer-inner">
-        <small>© <span id="year"></span> Ashish Puri</small>
-        <!-- <span class="pill">Built for GitHub Pages · No build step</span> -->
       </div>
-    </footer>
-  </div>
+    </section>
 
-  <div class="page-bottom-glow" aria-hidden="true"></div>
+    <section id="offers">
+      <div class="container">
+        <h2>Productized offers</h2>
+        <p class="muted">Clear scope, timelines, and deliverables. Pricing depends on complexity and
+          data maturity.</p>
+        <div class="cards">
+          <div class="card">
+            <h3>AI Readiness Audit (large language models)</h3>
+            <p class="muted">One-week diagnostic to de-risk your roadmap.</p>
+            <ul>
+              <li>Use-case scoring and simple ROI model</li>
+              <li>Data map, privacy and risk check</li>
+              <li>High-level architecture and build plan</li>
+            </ul>
+            <p><span class="price">€2.5k–€4k</span> • 5 days • report + call</p>
+          </div>
+          <div class="card">
+            <h3>Pilot in 30 days</h3>
+            <p class="muted">Ship one AI workflow to production with a limited rollout.</p>
+            <ul>
+              <li>Knowledge search, instructions to the model, and safety checks</li>
+              <li>Quality tests with clear pass/fail gates</li>
+              <li>Cost dashboard and usage alerts</li>
+            </ul>
+            <p><span class="price">€12k–€20k</span> • 30 days • code + docs</p>
+          </div>
+          <div class="card">
+            <h3>AI Quality & Operations</h3>
+            <p class="muted">Keep quality high and costs in check after launch.</p>
+            <ul>
+              <li>Prompt and version registry, A/B tests</li>
+              <li>Drift checks, adversarial testing, incident playbooks</li>
+              <li>Monthly improvements and reporting</li>
+            </ul>
+            <p><span class="price">€2k–€6k/mo</span> • monthly retainer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <h2>How we work</h2>
+        <div class="process-flow">
+          <div class="flow-step" data-step="1">
+            <div class="bar"></div>
+            <h3>Discovery (20 minutes)</h3>
+            <p class="muted">Confirm the problem, constraints, decision-makers, and the success
+              metric.</p>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-step" data-step="2">
+            <div class="bar"></div>
+            <h3>Paid diagnostic (1 week)</h3>
+            <p class="muted">Produce a practical plan with clear yes/no decision gates and a quote.
+            </p>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-step" data-step="3">
+            <div class="bar"></div>
+            <h3>Pilot build (30 days)</h3>
+            <p class="muted">Knowledge search, safety checks, quality tests and dashboards. Deploy
+              in your EU cloud.</p>
+          </div>
+          <div class="flow-arrow" aria-hidden="true">→</div>
+          <div class="flow-step" data-step="4">
+            <div class="bar"></div>
+            <h3>Handover and measure</h3>
+            <p class="muted">Limited rollout, track results, and set up ongoing quality checks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="container">
+        <h2>Case studies</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Support and docs assistant</h3>
+            <p class="muted">AI assistant for internal docs with quality checks and safe fallback
+              answers.</p>
+            <ul>
+              <li>Hallucinations reduced using better ranking and safety rules</li>
+              <li>Quality tests: accuracy on sample questions, policy checks, and cost per answer
+              </li>
+              <li>Outcome: higher deflection rate, faster ticket resolution</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Operations automation co‑pilot</h3>
+            <p class="muted">Structured extraction and templated actions for back-office workflows.
+            </p>
+            <ul>
+              <li>Personal data detection and redaction, with audit logging</li>
+              <li>Model routing based on the task</li>
+              <li>Outcome: shorter cycle time and fewer manual errors</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Pricing experimentation program</h3>
+            <p class="muted">Experiment design and weekly cadence for price tests in a marketplace.
+            </p>
+            <ul>
+              <li>Safeguards to cap revenue risk</li>
+              <li>Weekly readouts and rollout playbooks</li>
+              <li>Outcome: faster learning and cleaner decisions</li>
+            </ul>
+          </div>
+        </div>
+        <p class="muted" style="margin-top:8px">Previously built machine learning systems with:
+          Bolt, Delivery Hero, Blue Yonder, ZS.</p>
+      </div>
+    </section>
+
+    <section id="trust">
+      <div class="container">
+        <h2>Security & compliance</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>EU-hosted deployments</h3>
+            <p class="muted">Run in your accounts on EU regions or self-hosted inference. Clear data
+              flow diagrams and Data Protection Impact Assessment (DPIA) support.</p>
+          </div>
+          <div class="card">
+            <h3>Privacy by design</h3>
+            <p class="muted">Personal data classification and redaction, retention controls, and
+              audit logs. No surprise data leaks.</p>
+          </div>
+          <div class="card">
+            <h3>Measurable quality</h3>
+            <p class="muted">Offline tests, limited live rollouts, and dashboards for cost and
+              quality. Green lights before rollout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>Which models do you use?</summary>
+            <p>We choose the model based on your needs: speed, privacy, cost, and accuracy. This can
+              be a commercial API, an open-source model such as Llama or Mistral, or a model we run
+              on your own servers.</p>
+          </details>
+          <details>
+            <summary>Do you keep our data?</summary>
+            <p>No. The work happens inside your cloud accounts and code repositories. Any sample
+              data on my side is anonymized or synthetic and deleted after delivery.</p>
+          </details>
+          <details>
+            <summary>What does success look like?</summary>
+            <p>Before building, we agree on a few measurable targets and safety rules. The pilot
+              rolls out to a small group first and must pass tests before a wider launch.</p>
+          </details>
+          <details>
+            <summary>How do we start?</summary>
+            <p>Book a 20‑minute intro. If there’s a fit, we run the one‑week diagnostic to produce a
+              concrete plan and quote for the 30‑day pilot.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="panel">
+          <div class="grid two">
+            <div>
+              <h2>Ready to ship something real?</h2>
+              <p class="muted">Pick a slot and we’ll scope a pilot you can launch in a month.</p>
+            </div>
+            <div>
+              <p>
+                <a class="btn" href="https://calendly.com/ashish96puri/30min">Book intro call</a>
+                <span style="margin-left:8px"></span>
+                <a class="btn secondary" href="mailto:ashish96puri@gmail.com">Email</a>
+              </p>
+              <p class="muted">Based in Berlin • Remote friendly • EU-first</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap">
+        <div>© <span id="y"></span> Ashish Puri</div>
+        <div class="muted">Previously at Bolt, Delivery Hero, Blue Yonder, ZS</div>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // Helper: same-origin check
-    function sameOrigin(url) {
-      try {
-        return new URL(url, location.href).origin === location.origin;
-      } catch {
-        return false;
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1) Start at top on first external visit with a hash (e.g. .../#contact)
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-      }
-      const cameFromExternal = !document.referrer || !sameOrigin(document.referrer);
-      if (cameFromExternal && location.hash) {
-        history.replaceState(null, '', location.pathname + location.search);
-        setTimeout(() => window.scrollTo(0, 0), 0);
-      }
-
-      // 2) Year stamp
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // 3) Reveal animations
-      const reveals = document.querySelectorAll('.reveal');
-      if ('IntersectionObserver' in window) {
-        const io = new IntersectionObserver((entries, obs) => {
-          entries.forEach(e => {
-            if (e.isIntersecting) {
-              e.target.classList.add('on');
-              obs.unobserve(e.target);
-            }
-          });
-        }, {
-          threshold: 0.08
-        });
-        reveals.forEach(el => io.observe(el));
-      } else {
-        reveals.forEach(el => el.classList.add('on'));
-      }
-    });
-
-    // ============================
-    // Interactive projects script
-    // ============================
-    document.addEventListener('DOMContentLoaded', () => {
-      const cards = document.querySelectorAll('.card.impact-switch');
-
-      function setMaxHeight(card) {
-        const body = card.querySelector('.switch-body');
-        const summary = card.querySelector('.pane.summary');
-        const impact = card.querySelector('.pane.impact');
-        if (!body || !summary || !impact) return;
-
-        // Which pane is showing now?
-        const sumShown = summary.classList.contains('show');
-        const impShown = impact.classList.contains('show');
-
-        // Measure natural heights in flow
-        body.classList.add('measuring');
-        summary.classList.add('show');
-        summary.classList.remove('hide');
-        impact.classList.add('show');
-        impact.classList.remove('hide');
-        const sumH = summary.offsetHeight;
-        const impH = impact.offsetHeight;
-        const maxH = Math.max(sumH, impH);
-
-        // Restore
-        if (!sumShown) {
-          summary.classList.remove('show');
-          summary.classList.add('hide');
-        }
-        if (!impShown) {
-          impact.classList.remove('show');
-          impact.classList.add('hide');
-        }
-        body.classList.remove('measuring');
-
-        // Lock height
-        body.style.setProperty('--panel-h', maxH + 'px');
-      }
-
-      cards.forEach(card => {
-        const body = card.querySelector('.switch-body');
-        const summary = card.querySelector('.pane.summary');
-        const impact = card.querySelector('.pane.impact');
-        const toggle = card.querySelector('.card-toggle');
-        const title = card.querySelector('.proj-head');
-        const arrow = card.querySelector('.hover-arrow');
-        let spin = 0; // cumulative turns applied to the arrow
-        const setSpin = () => {
-          if (arrow) arrow.style.setProperty('--arrow-spin', spin + 'turn');
-        };
-        setSpin(); // initialize
-        if (!body || !summary || !impact || !toggle) return;
-
-        // Initial lock
-        setMaxHeight(card);
-
-        // Toggle panes (height is fixed)
-        function toggleOpen() {
-          const open = card.dataset.open === 'true';
-          const opening = card.dataset.open !== 'true'; // summary -> KPIs ?
-          spin += 0.5;
-          setSpin();
-          if (open) {
-            summary.classList.add('show');
-            summary.classList.remove('hide');
-            impact.classList.remove('show');
-            impact.classList.add('hide');
-            card.dataset.open = 'false';
-          } else {
-            impact.classList.add('show');
-            impact.classList.remove('hide');
-            summary.classList.remove('show');
-            summary.classList.add('hide');
-            card.dataset.open = 'true';
-          }
-          if (arrow) {
-            const open = card.dataset.open === 'true';
-            arrow.setAttribute('aria-label', open ? 'Back to summary' :
-              'Show business impact');
-          }
-        }
-        let busy = false; // add near toggleOpen, per card
-
-        function safeToggle() {
-          if (busy) return;
-          busy = true;
-          toggleOpen();
-          setTimeout(() => busy = false, 320); // matches your pane transition ~320ms
-        }
-
-        toggle.addEventListener('click', toggleOpen);
-        // Allow closing by clicking the title when open (does not block scroller)
-        if (title) title.addEventListener('click', () => {
-          if (card.dataset.open === 'true') toggleOpen();
-        });
-        card.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && card.dataset.open === 'true') toggleOpen();
-        });
-        if (arrow) {
-          arrow.addEventListener('click', (e) => {
-            e.stopPropagation();
-            e.stopImmediatePropagation();
-            safeToggle();
-          });
-          arrow.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              e.stopPropagation();
-              e.stopImmediatePropagation();
-              safeToggle();
-            }
-          });
-        }
-
-        // Recalculate when layout/Fonts change
-        const ro = new ResizeObserver(() => setMaxHeight(card));
-        ro.observe(summary);
-        ro.observe(impact);
-        window.addEventListener('resize', () => setMaxHeight(card));
-        if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(() => setMaxHeight(card));
-        }
-      });
-    });
+    document.getElementById('y').textContent = new Date().getFullYear();
 
   </script>
+
+  <!-- Schema.org structured data -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [{
-          "@id": "https://ashish96puri.github.io/#person",
           "@type": "Person",
+          "@id": "https://ashish96puri.github.io/#person",
           "name": "Ashish Puri",
           "url": "https://ashish96puri.github.io/",
-          "image": "https://ashish96puri.github.io/assets/ashish.jpg",
-          "jobTitle": "Freelance Data Scientist",
-          "worksFor": {
-            "@id": "https://ashish96puri.github.io/#service"
-          },
+          "jobTitle": "AI Integration Consultant",
+          "email": "mailto:ashish96puri@gmail.com",
           "sameAs": [
             "https://www.linkedin.com/in/ashish-puri-b34475149",
             "https://github.com/ashish96puri"
           ]
         },
         {
-          "@id": "https://ashish96puri.github.io/#service",
-          "@type": "ProfessionalService",
-          "name": "Data Science Consulting",
-          "url": "https://ashish96puri.github.io/#services",
-          "serviceType": [
-            "AI Integrations",
-            "Forecasting & Pricing",
-            "Marketing Mix Modeling",
-            "Customer Segmentation"
-          ],
-          "areaServed": {
-            "@type": "City",
-            "name": "Berlin"
-          },
-          "provider": {
+          "@type": "Organization",
+          "@id": "https://ashish96puri.github.io/#org",
+          "name": "Ashish Puri Consulting",
+          "url": "https://ashish96puri.github.io/",
+          "founder": {
             "@id": "https://ashish96puri.github.io/#person"
           },
-          "email": "ashish96puri@gmail.com",
-          "priceRange": "€130–€170/hour",
-          "knowsAbout": ["pricing analytics", "ETA forecasting", "MMM", "segmentation"]
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "mailto:ashish96puri@gmail.com",
+            "areaServed": "EU",
+            "availableLanguage": ["en", "de", "hi"]
+          }
         },
         {
-          "@id": "https://ashish96puri.github.io/#website",
-          "@type": "WebSite",
-          "url": "https://ashish96puri.github.io/",
-          "name": "Ashish Puri",
-          "publisher": {
-            "@id": "https://ashish96puri.github.io/#person"
-          }
+          "@type": "Service",
+          "@id": "https://ashish96puri.github.io/#service-llm",
+          "serviceType": "AI features with large language models for SaaS & Marketplaces",
+          "provider": {
+            "@id": "https://ashish96puri.github.io/#org"
+          },
+          "areaServed": "EU",
+          "offers": [{
+              "@type": "Offer",
+              "name": "AI Readiness Audit (large language models)",
+              "priceCurrency": "EUR",
+              "price": "2500",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "EUR",
+                "minPrice": 2500,
+                "maxPrice": 4000
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "Pilot in 30 days",
+              "priceCurrency": "EUR",
+              "price": "12000",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "EUR",
+                "minPrice": 12000,
+                "maxPrice": 20000
+              }
+            },
+            {
+              "@type": "Offer",
+              "name": "AI Quality & Operations",
+              "priceCurrency": "EUR",
+              "price": "2000",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "EUR",
+                "minPrice": 2000,
+                "maxPrice": 6000
+              }
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://ashish96puri.github.io/#faq",
+          "mainEntity": [{
+              "@type": "Question",
+              "name": "Which models do you use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We choose the model based on your needs: speed, privacy, cost, and accuracy. This can be a commercial API, an open-source model such as Llama or Mistral, or a model we run on your own servers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you keep our data?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The work happens inside your cloud accounts and code repositories. Any sample data on my side is anonymized or synthetic and deleted after delivery."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What does success look like?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Before building, we agree on a few measurable targets and safety rules. The pilot rolls out to a small group first and must pass tests before a wider launch."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do we start?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Book a 20-minute intro. If there’s a fit, we run a one-week diagnostic and then a 30-day pilot."
+              }
+            }
+          ]
         }
       ]
     }
