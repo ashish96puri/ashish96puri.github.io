@@ -2,31 +2,38 @@
 name: Generate sitemap
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]   # run after you merge to main
+  workflow_dispatch:
+
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   build:
-    # avoid action pushing a change that retriggers itself
-    if: github.actor != 'github-actions[bot]'
+    # Only run on pushes to main, not on PRs
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # needed for correct <lastmod> dates
+          fetch-depth: 0
 
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: "https://ashish96puri.github.io/"
-          drop-html-extension: true  # if you prefer /page/ over /page.html
+          drop-html-extension: true
 
-      - name: Commit sitemap
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml
-          git commit -m "Update sitemap" || exit 0
-          git push
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: automation/sitemap
+          commit-message: "chore: update sitemap"
+          title: "chore: update sitemap"
+          body: "Automated sitemap update."
+          author: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          committer: "github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>"
+          labels: automated
+          delete-branch: true
