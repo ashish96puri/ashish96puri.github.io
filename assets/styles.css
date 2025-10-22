@@ -124,3 +124,66 @@
 @media (min-width: 900px){
   .logo-row img{ height:28px; }
 }
+/* =========================
+   Mobile-only polish (<900px)
+   ========================= */
+   @media (max-width: 899px) {
+    :root {
+      --pad-1: 8px;
+      --pad-2: 12px;
+      --pad-3: 16px;
+      --pad-4: 20px;
+      --fs-base: 16px;
+      --fs-h1: 28px;  /* big enough to feel “hero”, not shouty */
+      --fs-h2: 20px;
+      --fs-h3: 18px;
+    }
+
+    html, body {
+      font-size: var(--fs-base);
+      line-height: 1.55;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* container padding so text isn’t kissing the bezel */
+    .container { padding-left: var(--pad-3); padding-right: var(--pad-3); }
+
+    /* header/nav: wrap nicely, CTA stays visible */
+    .header .container.nav { display: flex; flex-wrap: wrap; align-items: center; gap: var(--pad-2); }
+    .header .brand { flex: 1 0 100%; margin-bottom: 2px; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: var(--pad-2); }
+    .navlinks a { padding: 10px 12px; }
+    .navlinks .btn-cta { flex: 1 1 100%; text-align: center; }
+
+    /* hero: tighter hierarchy, readable badge */
+    .hero h1 { font-size: var(--fs-h1); line-height: 1.2; margin-bottom: var(--pad-2); }
+    .hero .lead.wide { font-size: var(--fs-base); max-width: 42ch; }
+    .badge { font-size: 12px; padding: 6px 8px; white-space: normal; }
+
+    /* section rhythm */
+    .section { padding: 28px 0; }
+
+    /* two-column blocks collapse to single column */
+    .twocol, .two-col, .twoCol { display: grid; grid-template-columns: 1fr; gap: var(--pad-3); }
+
+    /* cards: single column stack */
+    .cards { display: grid; grid-template-columns: 1fr; gap: var(--pad-3); }
+    .card { padding: var(--pad-3); }
+
+    /* pills and key-value chips don’t cramp */
+    .kv { gap: 6px; }
+    .kv .pill { font-size: 12px; padding: 6px 8px; }
+
+    /* checklists: give thumbs room to tap */
+    .checks li { margin: 10px 0; }
+
+    /* make CTAs easy to hit */
+    .btn, .btn-cta { width: 100%; justify-content: center; }
+
+    /* footer: stack rows, keep it legible */
+    .footer .row { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+    .footer .small { text-align: left; }
+
+    /* media: never overflow */
+    img, video, svg { max-width: 100%; height: auto; }
+  }
