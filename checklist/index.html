@@ -4,83 +4,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LLM Integration Checklist (EU edition)</title>
-  <link rel="canonical" href="https://ashish96puri.github.io/checklist/" />
+  <title>LLM Launch Checklist | Ashish Puri</title>
   <meta name="description"
-    content="A concise, practical checklist to ship an EU‑ready LLM integration: hosting, safety, and evaluation." />
+    content="A practical checklist to ship LLM features safely with measurable quality." />
+  <link rel="canonical" href="https://ashish96puri.github.io/checklist/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [{
+          "@type": "WebPage",
+          "@id": "https://ashish96puri.github.io/checklist/#webpage",
+          "url": "https://ashish96puri.github.io/checklist/",
+          "name": "LLM Launch Checklist",
+          "isPartOf": {
+            "@id": "https://ashish96puri.github.io/#website"
+          },
+          "dateModified": "2025-10-22"
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://ashish96puri.github.io/checklist/#items",
+          "name": "LLM Launch Checklist",
+          "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Define success metric and owner"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Confirm EU hosting requirement"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Configure PII redaction and logging"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Create golden test set"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "Add regression gates before deploy"
+            }
+          ]
+        }
+      ]
+    }
+
+  </script>
+
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="nav container">
-      <a href="/" class="brand">Ashish Puri</a>
-      <div class="nav-links">
+
+  <!-- header -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="https://www.linkedin.com/in/ashish-puri-b34475149" rel="me noopener"
+          target="_blank">Ashish Puri</a>
+      </div>
+      <nav class="navlinks">
+        <a href="/">Home</a>
         <a href="/cases/">Cases</a>
         <a href="/security/">Security</a>
-        <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Book intro call</a>
-      </div>
-    </nav>
+        <a class="active" href="/checklist/">Checklist</a>
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank"
+          rel="noopener">Book intro call</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <h1>LLM Integration Checklist (EU edition)</h1>
-    <p class="lede">Get the 2‑page PDF checklist covering env setup, data flows, evaluation, safety,
-      and rollout. No fluff.</p>
+  <section class="hero">
+    <div class="container">
+      <span class="badge"><span class="dot"></span> EU-hosted options • Safety checks • Quality
+        tests</span>
+      <h1>LLM launch checklist</h1>
+      <p class="lead wide">Use this to avoid the usual landmines. Adapt per product, but don’t skip
+        the gates.</p>
+    </div>
+  </section>
 
-    <form id="capture" class="capture" action="https://formspree.io/f/REPLACE_ME" method="POST">
-      <label>Email
-        <input type="email" name="email" required placeholder="you@company.com"
-          autocomplete="email" />
-      </label>
-      <label>
-        <input type="checkbox" name="consent" required /> I agree to receive the checklist and a
-        single follow‑up.
-      </label>
-      <input type="hidden" name="form-name" value="llm-checklist-eu" />
-      <button class="btn cta-book" type="submit">Send me the checklist</button>
-    </form>
+  <section class="section">
+    <div class="container twocol">
+      <div>
+        <h2>Scoping</h2>
+        <ul class="checks">
+          <li>Clear success metric and owner</li>
+          <li>Data sources and retention policy defined</li>
+          <li>EU hosting requirement confirmed or not applicable</li>
+        </ul>
+        <h2 class="mtop">Safety</h2>
+        <ul class="checks">
+          <li>PII handling and redaction configured</li>
+          <li>Prohibited content and risky promises blocked</li>
+          <li>Escalation thresholds defined</li>
+        </ul>
+        <h2 class="mtop">Quality</h2>
+        <ul class="checks">
+          <li>Golden test set created</li>
+          <li>Regression gates before deploy</li>
+          <li>Post-launch eval with feedback loop</li>
+        </ul>
+      </div>
+      <aside>
+        <div class="card">
+          <h3>Downloadable version</h3>
+          <p class="small">Copy this list into your tracker. Ask for a prefilled template if you’re
+            lazy or busy. Both are fine.</p>
+          <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank">Get
+            the template</a>
+        </div>
+      </aside>
+    </div>
+  </section>
 
-    <p id="success" class="hidden">Thanks. Your download should start. If not, <a
-        href="/assets/checklist/llm-integration-checklist-eu.pdf">click here</a>.</p>
-  </main>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container row">
+      <div class="small">© <span id="y"></span> Ashish Puri. EU-hosted options. Safety checks.
+        Quality tests.</div>
+      <div class="small"><a class="underline" href="/sitemap.xml">sitemap</a></div>
+    </div>
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear()
 
-  <footer class="site-footer container">
-    <p>© <span id="year"></span> Ashish Puri</p>
+    </script>
   </footer>
 
-  <script>
-    // Optional auto-download after successful static form post via XHR
-    const form = document.getElementById('capture');
-    const success = document.getElementById('success');
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: {
-            'Accept': 'application/json'
-          }
-        });
-        if (res.ok) {
-          form.classList.add('hidden');
-          success.classList.remove('hidden');
-          window.location.href = '/assets/checklist/llm-integration-checklist-eu.pdf';
-        } else {
-          alert('Something went wrong. Please email ashish96puri@gmail.com');
-        }
-      } catch (err) {
-        alert('Network error. Please try again.');
-      }
-    });
-
-  </script>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-  </script>
 </body>
 
 </html>

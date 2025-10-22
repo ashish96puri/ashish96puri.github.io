@@ -8,776 +8,221 @@
   <meta name="description"
     content="Ship reliable AI features built with large language models in 30 days: knowledge search, safety checks, quality tests, and EU-hosted deployments. Fixed-scope packages and clear success metrics." />
   <link rel="canonical" href="https://ashish96puri.github.io/" />
-  <meta property="og:title" content="LLM Integration for SaaS & Marketplaces | Ashish Puri" />
-  <meta property="og:description"
-    content="Ship reliable AI features built with large language models in 30 days: knowledge search, safety checks, quality tests, and EU-hosted deployments." />
-  <meta property="og:url" content="https://ashish96puri.github.io/" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <style>
-    :root {
-      --bg: #0b0c10;
-      --panel: #111317;
-      --muted: #7c8a9e;
-      --text: #e6edf3;
-      --brand: #7dd3fc;
-      --brand-2: #a78bfa;
-      --ok: #34d399;
-      --radius: 16px;
-      --shadow: 0 6px 24px rgba(0, 0, 0, .25)
-    }
-
-    * {
-      box-sizing: border-box
-    }
-
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"
-    }
-
-    a {
-      color: var(--brand);
-      text-decoration: none
-    }
-
-    a:hover {
-      text-decoration: underline
-    }
-
-    .container {
-      width: min(1100px, 92vw);
-      margin: 0 auto;
-      padding: 0 16px
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      backdrop-filter: saturate(120%) blur(8px);
-      background: rgba(11, 12, 16, .6);
-      border-bottom: 1px solid #1f2937;
-      z-index: 50
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: .2px;
-      font-size: 18px;
-      color: var(--text);
-      text-decoration: none
-    }
-
-    .nav ul {
-      list-style: none;
-      display: flex;
-      gap: 18px;
-      padding: 0;
-      margin: 0;
-      align-items: center
-    }
-
-    .nav ul a {
-      color: var(--muted);
-      font-weight: 500
-    }
-
-    .hamburger {
-      display: none;
-      border: 1px solid #2b3340;
-      border-radius: 8px;
-      padding: 8px 10px;
-      color: var(--muted);
-      background: #0f1115
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: var(--radius);
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      color: #000;
-      font-weight: 700;
-      letter-spacing: .3px;
-      box-shadow: var(--shadow)
-    }
-
-    .btn.secondary {
-      background: #1f2937;
-      color: var(--text);
-      box-shadow: none;
-      border: 1px solid #2b3340
-    }
-
-    .btn.cta-book {
-      color: #000 !important;
-      background: #ffe14d;
-      border: 1px solid #111
-    }
-
-    .btn.ghost {
-      border: 1px solid #2b3340;
-      color: var(--text);
-      background: transparent
-    }
-
-    .grid {
-      display: grid;
-      gap: 18px
-    }
-
-    .two {
-      grid-template-columns: 1.2fr .8fr
-    }
-
-    @media (max-width:860px) {
-      .two {
-        grid-template-columns: 1fr
-      }
-    }
-
-    .hero {
-      padding: 54px 0 36px
-    }
-
-    .hero h1 {
-      margin: 14px 0 10px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.1;
-      letter-spacing: .2px
-    }
-
-    .hero p {
-      color: #c5ced8;
-      font-size: 17px
-    }
-
-    .panel {
-      background: var(--panel);
-      border: 1px solid #202634;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 18px
-    }
-
-    section {
-      padding: 42px 0
-    }
-
-    h2 {
-      font-size: 26px;
-      margin: 0 0 14px
-    }
-
-    h3 {
-      font-size: 18px;
-      margin: 0 0 10px
-    }
-
-    .muted {
-      color: var(--muted)
-    }
-
-    .price {
-      color: var(--ok);
-      font-weight: 700
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px
-    }
-
-    .card {
-      display: block;
-      background: var(--panel);
-      border: 1px solid #202634;
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow)
-    }
-
-    .card ul {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: #c5ced8
-    }
-
-    /* process flow */
-    .process-flow {
-      display: flex;
-      align-items: stretch;
-      gap: 12px
-    }
-
-    .flow-step {
-      position: relative;
-      flex: 1;
-      background: var(--panel);
-      border: 1px solid #202634;
-      border-radius: var(--radius);
-      padding: 22px 16px 16px;
-      box-shadow: var(--shadow)
-    }
-
-    .flow-step::before {
-      content: attr(data-step);
-      position: absolute;
-      top: -12px;
-      left: 12px;
-      width: 28px;
-      height: 28px;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      background: #0f1115;
-      border: 1px solid #2b3340;
-      font-weight: 800;
-      z-index: 2
-    }
-
-    .flow-step .bar {
-      position: absolute;
-      top: 8px;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      border-top-left-radius: inherit;
-      border-top-right-radius: inherit;
-      z-index: 1
-    }
-
-    .flow-step h3 {
-      margin: 6px 0 6px;
-      font-size: 16px
-    }
-
-    .flow-step p {
-      margin: 0;
-      color: #c5ced8
-    }
-
-    .flow-arrow {
-      display: grid;
-      place-items: center;
-      min-width: 32px;
-      font-size: 22px;
-      color: var(--muted)
-    }
-
-    @media (max-width:860px) {
-      .process-flow {
-        flex-direction: column
-      }
-
-      .flow-arrow {
-        transform: rotate(90deg)
-      }
-    }
-
-    /* faq */
-    .faq details {
-      background: var(--panel);
-      border: 1px solid #202634;
-      border-radius: var(--radius);
-      padding: 14px 18px;
-      margin-bottom: 12px
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-weight: 600
-    }
-
-    footer {
-      color: #9aa7b8;
-      padding: 32px 0 48px;
-      border-top: 1px solid #1c2230
-    }
-
-    /* nav button text stays black */
-    .nav ul a.btn {
-      color: #000 !important
-    }
-
-    /* simple mobile nav */
-    @media (max-width:680px) {
-      .nav ul {
-        display: none
-      }
-
-      .hamburger {
-        display: inline-block
-      }
-
-      .nav.open ul {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 58px;
-        right: 4vw;
-        background: #0f1115;
-        border: 1px solid #2b3340;
-        border-radius: 12px;
-        padding: 12px;
-        width: 220px;
-        box-shadow: var(--shadow)
-      }
-
-      .nav.open ul a {
-        padding: 8px 6px
-      }
-    }
-
-    /* code/mono */
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      color: #d1d9e6;
-      background: #0f1115;
-      padding: 2px 6px;
-      border-radius: 6px;
-      border: 1px solid #2b3340;
-    }
-
-    /* nav button specificity fix */
-    .nav ul a.btn {
-      color: #000 !important;
-    }
-
-    /* process flow visual fixes */
-    .flow-step {
-      padding-top: 22px;
-    }
-
-    .flow-step::before {
-      z-index: 2;
-    }
-
-    .flow-step .bar {
-      top: 8px;
-      z-index: 1;
-    }
-
-    .btn.cta-book {
-      color: #000 !important;
-      background: #ffe14d;
-      border: 1px solid #111;
-    }
-
-    .btn.cta-book:hover {
-      filter: brightness(0.95);
-    }
-
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 16px;
-    }
-
-    .case .lede,
-    .security .lede {
-      color: #333;
-    }
-
-    .case .metrics {
-      list-style: disc;
-      padding-left: 20px;
-    }
-
-    .arch img {
-      max-width: 100%;
-      height: auto;
-      border: 1px solid #e5e5e5;
-      border-radius: 10px;
-    }
-
-    .caption {
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    .case .breadcrumb {
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    .case .cta,
-    .security .cta {
-      margin: 32px 0;
-    }
-
-    .faq details {
-      border: 1px solid #e5e5e5;
-      border-radius: 10px;
-      padding: 12px 16px;
-      margin: 12px 0;
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .capture {
-      display: grid;
-      gap: 12px;
-      max-width: 480px;
-    }
-
-    .capture input[type="email"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #bbb;
-      border-radius: 8px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      text-decoration: none;
-      border-radius: 10px;
-    }
-
-    .btn.ghost {
-      border: 1px solid #111;
-      color: #111;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .site-header .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0;
-    }
-
-    .nav .nav-links a {
-      margin-left: 14px;
-    }
-
-    .brand {
-      font-weight: 700;
-      text-decoration: none;
-      color: #111;
-    }
-
-    .site-footer {
-      margin: 48px 0;
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-  </style>
-</head>
-
-<body>
-  <header>
-    <div class="container nav" id="nav">
-      <a class="brand" href="/">Ashish Puri</a>
-      <button class="hamburger" aria-label="Menu"
-        onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
-      <ul>
-        <li><a href="#offers">Offers</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="/cases/">Case studies</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Book intro
-            call</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Plug LLMs into your product without breaking trust</h1>
-        <p class="subhead">Integration for SaaS and marketplaces. <strong>EU‑hosted</strong> data
-          paths, automated <strong>safety checks</strong>, and repeatable <strong>quality
-            tests</strong> from day one.</p>
-        <div class="cta-row">
-          <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min" rel="noopener">Book
-            intro call</a>
-          <a class="btn ghost" href="/cases/">See case studies</a>
-          <a class="btn ghost" href="/checklist/">LLM Integration Checklist (EU)</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="offers">
-      <div class="container">
-        <h2>Productized offers</h2>
-        <p class="muted">Clear scope, timelines, and deliverables. Pricing depends on complexity and
-          data maturity.</p>
-        <div class="cards">
-          <div class="card">
-            <h3>AI Readiness Audit (large language models)</h3>
-            <p class="muted">One-week diagnostic to de-risk your roadmap.</p>
-            <ul>
-              <li>Use-case scoring and simple ROI model</li>
-              <li>Data map, privacy and risk check</li>
-              <li>High-level architecture and build plan</li>
-            </ul>
-            <p><span class="price">€2.5k–€4k</span> • 5 days • report + call</p>
-          </div>
-          <div class="card">
-            <h3>Pilot in 30 days</h3>
-            <p class="muted">Ship one AI workflow to production with a limited rollout.</p>
-            <ul>
-              <li>Knowledge search, instructions to the model, and safety checks</li>
-              <li>Quality tests with clear pass/fail gates</li>
-              <li>Cost dashboard and usage alerts</li>
-            </ul>
-            <p><span class="price">€12k–€20k</span> • 30 days • code + docs</p>
-          </div>
-          <div class="card">
-            <h3>AI Quality & Operations</h3>
-            <p class="muted">Keep quality high and costs in check after launch.</p>
-            <ul>
-              <li>Prompt and version registry, A/B tests</li>
-              <li>Drift checks, adversarial testing, incident playbooks</li>
-              <li>Monthly improvements and reporting</li>
-            </ul>
-            <p><span class="price">€2k–€6k/mo</span> • monthly retainer</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="process">
-      <div class="container">
-        <h2>How we work</h2>
-        <div class="process-flow">
-          <div class="flow-step" data-step="1">
-            <div class="bar"></div>
-            <h3>Discovery (20 minutes)</h3>
-            <p class="muted">Confirm the problem, constraints, decision-makers, and the success
-              metric.</p>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step" data-step="2">
-            <div class="bar"></div>
-            <h3>Paid diagnostic (1 week)</h3>
-            <p class="muted">Produce a practical plan with clear yes/no decision gates and a quote.
-            </p>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step" data-step="3">
-            <div class="bar"></div>
-            <h3>Pilot build (30 days)</h3>
-            <p class="muted">Knowledge search, safety checks, quality tests and dashboards. Deploy
-              in your EU cloud.</p>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">→</div>
-          <div class="flow-step" data-step="4">
-            <div class="bar"></div>
-            <h3>Handover and measure</h3>
-            <p class="muted">Limited rollout, track results, and set up ongoing quality checks.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Minimal homepage teaser linking to real case pages -->
-    <section id="cases">
-      <div class="container">
-        <h2>Case studies</h2>
-        <div class="cards">
-          <a class="card" href="/cases/support-assistant/">
-            <h3>Support & docs assistant</h3>
-            <p class="muted">Retrieval-grounded answers with cite-backs, safety rules, and
-              measurable quality.</p>
-          </a>
-          <a class="card" href="/cases/ops-copilot/">
-            <h3>Operations automation co-pilot</h3>
-            <p class="muted">Triage, routing, safe bulk actions, and full audit history for ops
-              teams.</p>
-          </a>
-        </div>
-        <p style="margin-top:8px"><a class="btn ghost" href="/cases/">See all</a></p>
-      </div>
-    </section>
-
-    <section id="faq" class="faq">
-      <div class="container">
-        <h2>FAQ</h2>
-        <details>
-          <summary>Where is data processed and stored?</summary>
-          <p>Processing runs in EU regions with EU‑hosted models where feasible. We keep customer
-            data out of provider training unless you explicitly opt in.</p>
-        </details>
-        <details>
-          <summary>How do you prevent unsafe or off‑brand outputs?</summary>
-          <p>We add policy prompts, tool limits, and automated red‑team checks. Each release ships
-            with regression tests for safety and quality.</p>
-        </details>
-        <details>
-          <summary>How long to ship an MVP?</summary>
-          <p>Typically 2–4 weeks for a scoped assistant or co‑pilot. Includes evaluation harness,
-            basic analytics, and handover docs.</p>
-        </details>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="panel">
-          <div class="grid two">
-            <div>
-              <h2>Ready to ship something real?</h2>
-              <p class="muted">Pick a slot and we’ll scope a pilot you can launch in a month.</p>
-            </div>
-            <div>
-              <p>
-                <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Book intro
-                  call</a>
-                <span style="margin-left:8px"></span>
-                <a class="btn secondary" href="mailto:ashish96puri@gmail.com">Email</a>
-              </p>
-              <p class="muted">Based in Berlin • Remote friendly • EU-first</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div style="display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap">
-        <div>© <span id="y"></span> Ashish Puri</div>
-        <div class="muted">Previously at Bolt, Delivery Hero, Blue Yonder, ZS</div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-  </script>
-
-  <!-- Schema.org structured data -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [{
+          "@type": "WebSite",
+          "@id": "https://ashish96puri.github.io/#website",
+          "url": "https://ashish96puri.github.io/",
+          "name": "Ashish Puri — LLM Integration",
+          "publisher": {
+            "@id": "https://ashish96puri.github.io/#person"
+          },
+          "inLanguage": "en"
+        },
+        {
           "@type": "Person",
           "@id": "https://ashish96puri.github.io/#person",
           "name": "Ashish Puri",
           "url": "https://ashish96puri.github.io/",
-          "jobTitle": "AI Integration Consultant",
-          "email": "mailto:ashish96puri@gmail.com",
+          "image": "https://ashish96puri.github.io/assets/ashish.jpg",
+          "jobTitle": "Freelance Data Scientist",
           "sameAs": [
             "https://www.linkedin.com/in/ashish-puri-b34475149",
             "https://github.com/ashish96puri"
           ]
-        }
-      }
-
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://ashish96puri.github.io/#org",
-      "name": "Ashish Puri — AI Consulting",
-      "url": "https://ashish96puri.github.io/",
-      "logo": "https://ashish96puri.github.io/assets/ashish.jpg",
-      "founder": {
-        "@type": "Person",
-        "name": "Ashish Puri",
-        "url": "https://ashish96puri.github.io/#person"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/ashish-puri-b34475149",
-        "https://github.com/ashish96puri"
-      ],
-      "areaServed": "EU",
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "email": "ashish96puri@gmail.com",
-        "availableLanguage": ["en", "hi", "de"]
-      }]
-    }
-
-  </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "@id": "https://ashish96puri.github.io/#service",
-      "serviceType": "LLM Integration for SaaS & Marketplaces",
-      "provider": {
-        "@id": "https://ashish96puri.github.io/#org"
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "European Union"
-      },
-      "audience": {
-        "@type": "BusinessAudience",
-        "name": "SaaS and marketplace operators"
-      },
-      "termsOfService": "https://ashish96puri.github.io/security/",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "EUR",
-        "price": "120",
-        "unitText": "HOUR"
-      }
-    }
-
-  </script>
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [{
-          "@type": "Question",
-          "name": "Where is data processed and stored?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Processing runs in EU regions with EU‑hosted models where feasible. Customer data is not used to train providers unless you explicitly opt in."
-          }
         },
         {
-          "@type": "Question",
-          "name": "How do you prevent unsafe or off‑brand outputs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We add policy prompts, tool limits, and automated red‑team checks. Each release ships with regression tests for safety and quality."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long to ship an MVP?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Typically 2–4 weeks for a scoped assistant or co‑pilot, including evaluation harness, basic analytics, and handover docs."
-          }
+          "@type": "WebPage",
+          "@id": "https://ashish96puri.github.io/#webpage",
+          "url": "https://ashish96puri.github.io/",
+          "name": "LLM Integration for SaaS & Marketplaces",
+          "isPartOf": {
+            "@id": "https://ashish96puri.github.io/#website"
+          },
+          "about": [{
+              "@type": "Thing",
+              "name": "Large Language Models"
+            },
+            {
+              "@type": "Thing",
+              "name": "Retrieval-Augmented Generation"
+            },
+            {
+              "@type": "Thing",
+              "name": "AI Guardrails"
+            }
+          ],
+          "datePublished": "2025-10-22",
+          "dateModified": "2025-10-22"
         }
       ]
     }
 
   </script>
+
+  <meta property="og:title" content="LLM Integration for SaaS & Marketplaces | Ashish Puri" />
+  <meta property="og:description"
+    content="Ship reliable AI features in 30 days with EU-hosted options, safety checks, and measurable quality." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ashish96puri.github.io/" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <!-- Structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [{
+          "@type": "WebSite",
+          "@id": "https://ashish96puri.github.io/#website",
+          "url": "https://ashish96puri.github.io/",
+          "name": "Ashish Puri — LLM Integration",
+          "inLanguage": "en"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://ashish96puri.github.io/#person",
+          "name": "Ashish Puri",
+          "url": "https://ashish96puri.github.io/",
+          "image": "https://ashish96puri.github.io/assets/ashish.jpg",
+          "jobTitle": "Freelance Data Scientist",
+          "sameAs": [
+            "https://www.linkedin.com/in/ashish-puri-b34475149",
+            "https://github.com/ashish96puri"
+          ]
+        }
+      ]
+    }
+
+  </script>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="https://www.linkedin.com/in/ashish-puri-b34475149" rel="me noopener"
+          target="_blank">Ashish Puri</a>
+      </div>
+      <nav class="navlinks">
+        <a class="active" href="/" aria-label="Home">Home</a>
+        <a href="/cases/">Cases</a>
+        <a href="/security/">Security</a>
+        <a href="/checklist/">Checklist</a>
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank"
+          rel="noopener">Book intro call</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge"><span class="dot"></span> EU-hosted options • Safety checks • Quality
+        tests</span>
+      <h1>Plug AI into your tools with safety, monitoring, and guardrails.</h1>
+      <p class="lead wide">Fixed-scope, 30-day sprints to ship useful LLM features. Retrieval that
+        cites sources, policy guardrails that block risky outputs, and evals so quality is
+        measurable instead of vibes.</p>
+      <div class="actions">
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank"
+          rel="noopener">Start a 20-min intro</a>
+        <a class="btn btn-ghost" href="/cases/">See case studies</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services / Offers -->
+  <section class="section">
+    <div class="container grid cols-3">
+      <article class="card">
+        <h3><a class="underline" href="/cases/support-assistant/">Support Assistant</a></h3>
+        <p class="small">Deflect common tickets with retrieval-grounded answers. Confidence-based
+          escalation and tone control.</p>
+        <ul class="checks">
+          <li>RAG over help center and macros</li>
+          <li>Safety checks for PII and promises</li>
+          <li>Transparent citations</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3><a class="underline" href="/cases/ops-copilot/">Ops Copilot</a></h3>
+        <p class="small">Summaries and next-best actions for operations. Every step logged,
+          reversible, and reviewable.</p>
+        <ul class="checks">
+          <li>Scoped tools with approvals</li>
+          <li>Quality tests on golden tasks</li>
+          <li>Audit trail and rollback</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Integration Sprint</h3>
+        <p class="small">30-day implementation to ship one focused feature. Clear success metric,
+          weekly demos, no scope creep.</p>
+        <ul class="checks">
+          <li>EU hosting option</li>
+          <li>Regression gates before launch</li>
+          <li>Post-launch eval dashboard</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section">
+    <div class="container twocol">
+      <div>
+        <h2>How this ships in 30 days</h2>
+        <ul class="checks">
+          <li>Define success metric and guardrails</li>
+          <li>Index sources and wire retrieval</li>
+          <li>Add policy checks and JSON outputs</li>
+          <li>Run golden tests and iterate</li>
+          <li>Launch with observability and feedback</li>
+        </ul>
+      </div>
+      <aside>
+        <div class="card">
+          <h3>What you get</h3>
+          <ul class="checks">
+            <li>Production endpoint and docs</li>
+            <li>Eval suite with golden set</li>
+            <li>Security notes and data flow</li>
+            <li>Rollback plan and on-call guide</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Security & Quality -->
+  <section class="section center">
+    <div class="container">
+      <h2>Security and measurable quality</h2>
+      <p class="lead wide">PII handling, least-privilege access, redaction, policy validators, and
+        eval dashboards. Your auditors can breathe.</p>
+      <div class="actions">
+        <a class="btn btn-ghost" href="/security/">Security overview</a>
+        <a class="btn btn-ghost" href="/checklist/">Launch checklist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container row">
+      <div class="small">© <span id="y"></span> Ashish Puri. EU-hosted options. Safety checks.
+        Quality tests.</div>
+      <div class="small"><a class="underline" href="/sitemap.xml">sitemap</a></div>
+    </div>
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear()
+
+    </script>
+  </footer>
+
 </body>
 
 </html>

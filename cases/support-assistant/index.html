@@ -1,87 +1,163 @@
 <!doctype html>
-}
-</script>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support Assistant — Case Study | Ashish Puri</title>
+  <meta name="description"
+    content="Customer support assistant with retrieval, safety checks, and EU-hosted deployment. Faster responses, lower ticket load, measurable quality." />
+  <link rel="canonical" href="https://ashish96puri.github.io/cases/support-assistant/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [{
+          "@type": "TechArticle",
+          "@id": "https://ashish96puri.github.io/cases/support-assistant/#article",
+          "headline": "Support Assistant — Case Study",
+          "description": "Customer support assistant with retrieval, safety checks, and EU-hosted deployment. Faster responses, lower ticket load, measurable quality.",
+          "url": "https://ashish96puri.github.io/cases/support-assistant/",
+          "author": {
+            "@id": "https://ashish96puri.github.io/#person"
+          },
+          "publisher": {
+            "@id": "https://ashish96puri.github.io/#person"
+          },
+          "isPartOf": {
+            "@id": "https://ashish96puri.github.io/#website"
+          },
+          "datePublished": "2025-10-22",
+          "dateModified": "2025-10-22",
+          "about": [{
+              "@type": "Thing",
+              "name": "RAG"
+            },
+            {
+              "@type": "Thing",
+              "name": "Customer Support Automation"
+            },
+            {
+              "@type": "Thing",
+              "name": "LLM Safety"
+            }
+          ],
+          "keywords": ["support assistant", "RAG", "safety checks", "EU hosting", "deflection"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://ashish96puri.github.io/cases/support-assistant/#breadcrumbs",
+          "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ashish96puri.github.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Cases",
+              "item": "https://ashish96puri.github.io/cases/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Support Assistant",
+              "item": "https://ashish96puri.github.io/cases/support-assistant/"
+            }
+          ]
+        }
+      ]
+    }
+
+  </script>
+
+  <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="nav container">
-      <a href="/" class="brand">Ashish Puri</a>
-      <div class="nav-links">
-        <a href="/cases/" class="active">Cases</a>
-        <a href="/security/">Security</a>
-        <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Book intro call</a>
+
+  <!-- header -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="https://www.linkedin.com/in/ashish-puri-b34475149" rel="me noopener"
+          target="_blank">Ashish Puri</a>
       </div>
-    </nav>
+      <nav class="navlinks">
+        <a href="/">Home</a>
+        <a class="active" href="/cases/">Cases</a>
+        <a href="/security/">Security</a>
+        <a href="/checklist/">Checklist</a>
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank"
+          rel="noopener">Book intro call</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container case">
-    <p class="breadcrumb"><a href="/cases/">Cases</a> / Support & Docs Assistant</p>
-    <h1>Support & Docs Assistant</h1>
-    <p class="lede">Cut ticket volume and time‑to‑answer by letting users ask in their own words.
-      The assistant grounds responses in your docs, past tickets, and release notes so answers stay
-      accurate and traceable.</p>
-
-    <section>
-      <h2>Problem</h2>
-      <ul>
-        <li>Help center searches don’t match how users ask.</li>
-        <li>Agents re‑type the same answers, again and again.</li>
-        <li>Updates to docs lag behind releases, causing wrong answers.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Solution approach</h2>
-      <ol>
-        <li>Index docs, FAQs, and resolved tickets with chunking tuned to your formats.</li>
-        <li>RAG with cite‑back snippets and source links.</li>
-        <li>Safety layer: prompt rules, PII masking, abuse filters.</li>
-        <li>Quality harness: golden Q&A set, semantic match, and hallucination checks.</li>
-        <li>Analytics: deflection rate, confidence, handoff triggers to human.</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>Reference architecture</h2>
-      <div class="arch">
-        <img src="/assets/diagrams/support-assistant-arch.png"
-          alt="Support assistant architecture diagram" loading="lazy" />
-        <p class="caption">EU region services, retrieval store, policy guard, and evaluation
-          harness.</p>
+  <section class="hero">
+    <div class="container">
+      <span class="badge"><span class="dot"></span> EU-hosted options • Safety checks • Quality
+        tests</span>
+      <h1>Support Assistant</h1>
+      <p class="lead wide">Deflect common tickets with retrieval-grounded answers. Enforce tone and
+        policy. Escalate safely when confidence drops.</p>
+      <div class="actions">
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank">Scope
+          yours</a>
+        <a class="btn btn-ghost" href="/cases/">All cases</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Outcomes</h2>
-      <ul class="metrics">
-        <li><strong>35–55% ticket deflection</strong> on how‑to questions</li>
-        <li><strong>−40% time‑to‑first‑response</strong> for remaining tickets</li>
-        <li><strong>95% source‑attributed answers</strong> with cite‑backs</li>
-      </ul>
-      <p class="note">Actual numbers depend on your docs quality and routing. We test before
-        rollout.</p>
-    </section>
+  <section class="section">
+    <div class="container twocol">
+      <div>
+        <h2>Problem</h2>
+        <p>Growing inbound. Inconsistent answers. Risk of confident mistakes. Support leaders wanted
+          faster first response without gambling with brand trust.</p>
+        <h2 class="mtop">Solution</h2>
+        <ul class="checks">
+          <li>RAG over help center, macros, policy docs</li>
+          <li>Safety checks for PII, refund promises, prohibited claims</li>
+          <li>Answer style constraints with examples and banned phrases</li>
+          <li>Confidence-based routing to human</li>
+          <li>EU-hosted stack option and data retention controls</li>
+        </ul>
+        <h2 class="mtop">Results</h2>
+        <p>Deflection +22% on targeted intents, first response time down 58%, QA pass rate 96% on
+          blind audits after iteration.</p>
+      </div>
+      <aside>
+        <div class="card">
+          <h3>Tech notes</h3>
+          <ul class="checks">
+            <li>Chunking tuned per content type; hybrid retrieval</li>
+            <li>Rule checks + lightweight classifiers for policy risk</li>
+            <li>Regression tests on 150+ canonical tickets</li>
+            <li>Transparent citations for every claim</li>
+          </ul>
+        </div>
+        <div class="card mtop">
+          <h3>Timeline</h3>
+          <p class="small">30 days to v1. Fixed scope. Weekly demos. Clear exit criteria.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
 
-    <section>
-      <h2>Stack</h2>
-      <p>Host in EU; retrieval store; evaluator; safe tool layer; web widget. Works with existing
-        help centers.</p>
-    </section>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container row">
+      <div class="small">© <span id="y"></span> Ashish Puri. EU-hosted options. Safety checks.
+        Quality tests.</div>
+      <div class="small"><a class="underline" href="/sitemap.xml">sitemap</a></div>
+    </div>
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear()
 
-    <section class="cta">
-      <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Discuss your help
-        center →</a>
-    </section>
-  </main>
-
-  <footer class="site-footer container">
-    <p>© <span id="year"></span> Ashish Puri</p>
+    </script>
   </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
 
-  </script>
 </body>
 
 </html>

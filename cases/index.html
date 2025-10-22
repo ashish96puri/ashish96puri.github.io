@@ -4,53 +4,140 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Case Studies — LLM for SaaS & Marketplaces</title>
-  <link rel="canonical" href="https://ashish96puri.github.io/cases/" />
+  <title>Case Studies | Ashish Puri</title>
   <meta name="description"
-    content="Selected case studies: Support/Docs Assistant and Ops Co‑pilot for SaaS and marketplace teams." />
+    content="Practical LLM integrations for support and operations. EU-hosted deployments, safety checks, and quality tests baked in." />
+  <link rel="canonical" href="https://ashish96puri.github.io/cases/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [{
+          "@type": "CollectionPage",
+          "@id": "https://ashish96puri.github.io/cases/#webpage",
+          "url": "https://ashish96puri.github.io/cases/",
+          "name": "Case Studies",
+          "isPartOf": {
+            "@id": "https://ashish96puri.github.io/#website"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://ashish96puri.github.io/cases/#list",
+          "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://ashish96puri.github.io/cases/support-assistant/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://ashish96puri.github.io/cases/ops-copilot/"
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://ashish96puri.github.io/cases/#breadcrumbs",
+          "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ashish96puri.github.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Cases",
+              "item": "https://ashish96puri.github.io/cases/"
+            }
+          ]
+        }
+      ]
+    }
+
+  </script>
+
   <link rel="stylesheet" href="/assets/styles.css" />
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="nav container">
-      <a href="/" class="brand">Ashish Puri</a>
-      <div class="nav-links">
-        <a href="/cases/" class="active">Cases</a>
-        <a href="/security/">Security</a>
-        <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Book intro call</a>
+
+  <!-- header -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="https://www.linkedin.com/in/ashish-puri-b34475149" rel="me noopener"
+          target="_blank">Ashish Puri</a>
       </div>
-    </nav>
+      <nav class="navlinks">
+        <a href="/">Home</a>
+        <a class="active" href="/cases/">Cases</a>
+        <a href="/security/">Security</a>
+        <a href="/checklist/">Checklist</a>
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank"
+          rel="noopener">Book intro call</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <h1>Case Studies</h1>
-    <p>Battle‑tested patterns for shipping useful AI without drama.</p>
-    <ul class="case-list">
-      <li>
-        <a href="/cases/support-assistant/">
-          <h2>Support & Docs Assistant</h2>
-          <p>Reduce ticket load and speed up answers with a retrieval‑grounded assistant trained on
-            your docs, tickets, and release notes.</p>
-        </a>
-      </li>
-      <li>
-        <a href="/cases/ops-copilot/">
-          <h2>Ops Co‑pilot</h2>
-          <p>Assist operations teams with triage, SLA routing, fraud signals, and bulk actions that
-            stay auditable.</p>
-        </a>
-      </li>
-    </ul>
-  </main>
+  <section class="hero">
+    <div class="container">
+      <span class="badge"><span class="dot"></span> EU-hosted options • Safety checks • Quality
+        tests</span>
+      <h1>Case studies</h1>
+      <p class="lead wide">A few concrete builds that shipped on time, survived real traffic, and
+        didn’t set the compliance team on fire.</p>
+      <div class="actions">
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min"
+          target="_blank">Discuss your use case</a>
+        <a class="btn btn-ghost" href="/security/">Security overview</a>
+      </div>
+    </div>
+  </section>
 
-  <footer class="site-footer container">
-    <p>© <span id="year"></span> Ashish Puri</p>
+  <section class="section">
+    <div class="container grid cols-3">
+      <article class="card">
+        <h3><a class="underline" href="/cases/support-assistant/">Support Assistant</a></h3>
+        <p class="small">Automated answers with guardrails. Deflection and faster first response
+          without hallucinated nonsense.</p>
+        <div class="kv">
+          <span class="pill">RAG</span><span class="pill">Safety checks</span><span class="pill">EU
+            hosting</span>
+        </div>
+      </article>
+      <article class="card">
+        <h3><a class="underline" href="/cases/ops-copilot/">Ops Copilot</a></h3>
+        <p class="small">Internal copilot for operations. Summaries, actions, and approvals with
+          tight scopes and audit trails.</p>
+        <div class="kv">
+          <span class="pill">Workflow tools</span><span class="pill">Quality tests</span><span
+            class="pill">SOC2-ready</span>
+        </div>
+      </article>
+      <article class="card">
+        <h3>More on request</h3>
+        <p class="small">Additional work samples under NDA. Happy to demo privately.</p>
+        <div class="kv">
+          <span class="pill">NDA</span><span class="pill">Private demo</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container row">
+      <div class="small">© <span id="y"></span> Ashish Puri. EU-hosted options. Safety checks.
+        Quality tests.</div>
+      <div class="small"><a class="underline" href="/sitemap.xml">sitemap</a></div>
+    </div>
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear()
+
+    </script>
   </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
 
-  </script>
 </body>
 
 </html>

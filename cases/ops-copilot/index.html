@@ -1,75 +1,159 @@
 <!doctype html>
-<div class="nav-links">
-  <a href="/cases/" class="active">Cases</a>
-  <a href="/security/">Security</a>
-  <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Book intro call</a>
-</div>
-</nav>
-</header>
+<html lang="en">
 
-<main class="container case">
-  <p class="breadcrumb"><a href="/cases/">Cases</a> / Ops Co‑pilot</p>
-  <h1>Ops Co‑pilot</h1>
-  <p class="lede">Triage, route, and resolve faster. The co‑pilot summarizes context, proposes safe
-    actions, and keeps an audit trail of every step.</p>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ops Copilot — Case Study | Ashish Puri</title>
+  <meta name="description"
+    content="Operations copilot for internal teams. Summaries and actions with clear scopes, audit trails, and measurable quality." />
+  <link rel="canonical" href="https://ashish96puri.github.io/cases/ops-copilot/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [{
+          "@type": "TechArticle",
+          "@id": "https://ashish96puri.github.io/cases/ops-copilot/#article",
+          "headline": "Ops Copilot — Case Study",
+          "description": "Internal operations copilot with summaries, scoped actions, approvals, and audit trails.",
+          "url": "https://ashish96puri.github.io/cases/ops-copilot/",
+          "author": {
+            "@id": "https://ashish96puri.github.io/#person"
+          },
+          "publisher": {
+            "@id": "https://ashish96puri.github.io/#person"
+          },
+          "isPartOf": {
+            "@id": "httpsish96puri.github.io/#website"
+          },
+          "datePublished": "2025-10-22",
+          "dateModified": "2025-10-22",
+          "about": [{
+              "@type": "Thing",
+              "name": "Operations Automation"
+            },
+            {
+              "@type": "Thing",
+              "name": "LLM Guardrails"
+            },
+            {
+              "@type": "Thing",
+              "name": "Quality Testing"
+            }
+          ],
+          "keywords": ["ops copilot", "workflow tools", "approvals", "audit trail", "evals"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://ashish96puri.github.io/cases/ops-copilot/#breadcrumbs",
+          "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://ashish96puri.github.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Cases",
+              "item": "https://ashish96puri.github.io/cases/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Ops Copilot",
+              "item": "https://ashish96puri.github.io/cases/ops-copilot/"
+            }
+          ]
+        }
+      ]
+    }
 
-  <section>
-    <h2>Problem</h2>
-    <ul>
-      <li>Ops dashboards are noisy. Important work hides in queues.</li>
-      <li>Manual checks waste time and introduce inconsistency.</li>
-      <li>Compliance requires auditable decisions.</li>
-    </ul>
-  </section>
+  </script>
 
-  <section>
-    <h2>Solution approach</h2>
-    <ol>
-      <li>Ingest cases across tools. Normalize events and entities.</li>
-      <li>LLM suggests next actions with confidence and rationale.</li>
-      <li>Guardrails enforce policy, SLAs, and role permissions.</li>
-      <li>One‑click bulk actions with preview and rollbacks.</li>
-      <li>Dashboards: throughput, stuck cases, exception reasons.</li>
-    </ol>
-  </section>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
 
-  <section>
-    <h2>Reference architecture</h2>
-    <div class="arch">
-      <img src="/assets/diagrams/ops-copilot-arch.png" alt="Ops co‑pilot architecture diagram"
-        loading="lazy" />
-      <p class="caption">Ingress, policy guard, action executor, and audit log.</p>
+<body>
+
+  <!-- header -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="https://www.linkedin.com/in/ashish-puri-b34475149" rel="me noopener"
+          target="_blank">Ashish Puri</a>
+      </div>
+      <nav class="navlinks">
+        <a href="/">Home</a>
+        <a class="active" href="/cases/">Cases</a>
+        <a href="/security/">Security</a>
+        <a href="/checklist/">Checklist</a>
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank"
+          rel="noopener">Book intro call</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="badge"><span class="dot"></span> EU-hosted options • Safety checks • Quality
+        tests</span>
+      <h1>Ops Copilot</h1>
+      <p class="lead wide">Give operators context and next best actions. Keep every step logged,
+        reversible, and reviewable.</p>
+      <div class="actions">
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank">Plan a
+          pilot</a>
+        <a class="btn btn-ghost" href="/cases/">All cases</a>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Outcomes</h2>
-    <ul class="metrics">
-      <li><strong>−25–40% handle time</strong> on routine cases</li>
-      <li><strong>+15–25% SLA adherence</strong> due to early triage</li>
-      <li><strong>100% action history</strong> with reason codes</li>
-    </ul>
+  <section class="section">
+    <div class="container twocol">
+      <div>
+        <h2>Problem</h2>
+        <p>Fragmented tools and slow swivel-chair work. Managers needed consistent outputs and
+          traceability without slowing teams down.</p>
+        <h2 class="mtop">Solution</h2>
+        <ul class="checks">
+          <li>Inbox and ticket summaries with links to evidence</li>
+          <li>Action templates with scoped permissions</li>
+          <li>Approval steps for sensitive actions</li>
+          <li>Quality tests on golden tasks before go-live</li>
+          <li>Observability and rollback for every action</li>
+        </ul>
+        <h2 class="mtop">Results</h2>
+        <p>Handle time down 27% on repetitive tasks. Error rates cut in half on targeted flows after
+          two iterations.</p>
+      </div>
+      <aside>
+        <div class="card">
+          <h3>Tech notes</h3>
+          <ul class="checks">
+            <li>Toolformer style prompts with strict JSON outputs</li>
+            <li>Policy validators pre- and post-action</li>
+            <li>RBAC scopes mirrored from existing IAM</li>
+            <li>Offline eval suite with regression gates</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
   </section>
 
-  <section>
-    <h2>Stack</h2>
-    <p>Event bus, policy engine, safe tool layer, evaluator, and audit store. EU deployment by
-      default.</p>
-  </section>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container row">
+      <div class="small">© <span id="y"></span> Ashish Puri. EU-hosted options. Safety checks.
+        Quality tests.</div>
+      <div class="small"><a class="underline" href="/sitemap.xml">sitemap</a></div>
+    </div>
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear()
 
-  <section class="cta">
-    <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Talk about your ops
-      queues →</a>
-  </section>
-</main>
+    </script>
+  </footer>
 
-<footer class="site-footer container">
-  <p>© <span id="year"></span> Ashish Puri</p>
-</footer>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-</script>
 </body>
 
 </html>
