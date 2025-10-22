@@ -2,34 +2,49 @@
 name: Generate sitemap
 on:
   push:
-    branches: [ main ]   # run after you merge to main
+    branches: [ main ]        # only when stuff lands on main
+    paths-ignore:
+      - 'sitemap.xml'         # merging the sitemap PR won't retrigger
   workflow_dispatch:
 
 permissions:
   contents: write
   pull-requests: write
 
+concurrency:
+  group: sitemap-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
-    # Only run on pushes to main, not on PRs
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0        # correct <lastmod> from git history
 
       - name: Generate sitemap
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: "https://ashish96puri.github.io/"
-          drop-html-extension: true
+          drop-html-extension: true  # if your site serves /page/ not /page.html
 
-      - name: Create Pull Request
+      - name: Detect changes
+        id: diff
+        run: |
+          if git diff --quiet -- sitemap.xml; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create/Update PR
+        if: steps.diff.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v6
         with:
-          branch: automation/sitemap
+          branch: automation/sitemap          # fixed branch = single rolling PR
+          add-paths: sitemap.xml
           commit-message: "chore: update sitemap"
           title: "chore: update sitemap"
           body: "Automated sitemap update."
