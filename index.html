@@ -343,6 +343,147 @@
       }
     }
 
+    /* code/mono */
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      color: #d1d9e6;
+      background: #0f1115;
+      padding: 2px 6px;
+      border-radius: 6px;
+      border: 1px solid #2b3340;
+    }
+
+    /* nav button specificity fix */
+    .nav ul a.btn {
+      color: #000 !important;
+    }
+
+    /* process flow visual fixes */
+    .flow-step {
+      padding-top: 22px;
+    }
+
+    .flow-step::before {
+      z-index: 2;
+    }
+
+    .flow-step .bar {
+      top: 8px;
+      z-index: 1;
+    }
+
+    .btn.cta-book {
+      color: #000 !important;
+      background: #ffe14d;
+      border: 1px solid #111;
+    }
+
+    .btn.cta-book:hover {
+      filter: brightness(0.95);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .case .lede,
+    .security .lede {
+      color: #333;
+    }
+
+    .case .metrics {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .arch img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+    }
+
+    .caption {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .case .breadcrumb {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .case .cta,
+    .security .cta {
+      margin: 32px 0;
+    }
+
+    .faq details {
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 12px 0;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .capture {
+      display: grid;
+      gap: 12px;
+      max-width: 480px;
+    }
+
+    .capture input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+
+    .btn.ghost {
+      border: 1px solid #111;
+      color: #111;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .site-header .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .nav .nav-links a {
+      margin-left: 14px;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-decoration: none;
+      color: #111;
+    }
+
+    .site-footer {
+      margin: 48px 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
   </style>
 </head>
 
@@ -367,7 +508,7 @@
     <section class="hero">
       <div class="container">
         <h1>Plug LLMs into your product without breaking trust</h1>
-        <p class="subhead">Integration for SaaS and marketplaces. <strong>EU-hosted</strong> data
+        <p class="subhead">Integration for SaaS and marketplaces. <strong>EU‑hosted</strong> data
           paths, automated <strong>safety checks</strong>, and repeatable <strong>quality
             tests</strong> from day one.</p>
         <div class="cta-row">
@@ -478,17 +619,17 @@
         <h2>FAQ</h2>
         <details>
           <summary>Where is data processed and stored?</summary>
-          <p>Processing runs in EU regions with EU-hosted models where feasible. We keep customer
+          <p>Processing runs in EU regions with EU‑hosted models where feasible. We keep customer
             data out of provider training unless you explicitly opt in.</p>
         </details>
         <details>
-          <summary>How do you prevent unsafe or off-brand outputs?</summary>
-          <p>We add policy prompts, tool limits, and automated red-team checks. Each release ships
+          <summary>How do you prevent unsafe or off‑brand outputs?</summary>
+          <p>We add policy prompts, tool limits, and automated red‑team checks. Each release ships
             with regression tests for safety and quality.</p>
         </details>
         <details>
           <summary>How long to ship an MVP?</summary>
-          <p>Typically 2–4 weeks for a scoped assistant or co-pilot. Includes evaluation harness,
+          <p>Typically 2–4 weeks for a scoped assistant or co‑pilot. Includes evaluation harness,
             basic analytics, and handover docs.</p>
         </details>
       </div>
@@ -535,20 +676,21 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://ashish96puri.github.io/#person",
-      "name": "Ashish Puri",
-      "url": "https://ashish96puri.github.io/",
-      "jobTitle": "AI Integration Consultant",
-      "email": "mailto:ashish96puri@gmail.com",
-      "sameAs": [
-        "https://www.linkedin.com/in/ashish-puri-b34475149",
-        "https://github.com/ashish96puri"
-      ]
-    }
+      "@graph": [{
+          "@type": "Person",
+          "@id": "https://ashish96puri.github.io/#person",
+          "name": "Ashish Puri",
+          "url": "https://ashish96puri.github.io/",
+          "jobTitle": "AI Integration Consultant",
+          "email": "mailto:ashish96puri@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/ashish-puri-b34475149",
+            "https://github.com/ashish96puri"
+          ]
+        }
+      }
 
   </script>
-
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -576,7 +718,6 @@
     }
 
   </script>
-
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -614,15 +755,15 @@
           "name": "Where is data processed and stored?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Processing runs in EU regions with EU-hosted models where feasible. Customer data is not used to train providers unless you explicitly opt in."
+            "text": "Processing runs in EU regions with EU‑hosted models where feasible. Customer data is not used to train providers unless you explicitly opt in."
           }
         },
         {
           "@type": "Question",
-          "name": "How do you prevent unsafe or off-brand outputs?",
+          "name": "How do you prevent unsafe or off‑brand outputs?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We add policy prompts, tool limits, and automated red-team checks. Each release ships with regression tests for safety and quality."
+            "text": "We add policy prompts, tool limits, and automated red‑team checks. Each release ships with regression tests for safety and quality."
           }
         },
         {
@@ -630,7 +771,7 @@
           "name": "How long to ship an MVP?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Typically 2–4 weeks for a scoped assistant or co-pilot, including evaluation harness, basic analytics, and handover docs."
+            "text": "Typically 2–4 weeks for a scoped assistant or co‑pilot, including evaluation harness, basic analytics, and handover docs."
           }
         }
       ]
