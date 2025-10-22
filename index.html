@@ -406,6 +406,118 @@
       z-index: 1;
     }
 
+    .btn.cta-book {
+      color: #000 !important;
+      background: #ffe14d;
+      border: 1px solid #111;
+    }
+
+    .btn.cta-book:hover {
+      filter: brightness(0.95);
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .case .lede,
+    .security .lede {
+      color: #333;
+    }
+
+    .case .metrics {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .arch img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+    }
+
+    .caption {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .case .breadcrumb {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .case .cta,
+    .security .cta {
+      margin: 32px 0;
+    }
+
+    .faq details {
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin: 12px 0;
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .capture {
+      display: grid;
+      gap: 12px;
+      max-width: 480px;
+    }
+
+    .capture input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+
+    .btn.ghost {
+      border: 1px solid #111;
+      color: #111;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .site-header .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
+
+    .nav .nav-links a {
+      margin-left: 14px;
+    }
+
+    .brand {
+      font-weight: 700;
+      text-decoration: none;
+      color: #111;
+    }
+
+    .site-footer {
+      margin: 48px 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
   </style>
 </head>
 
@@ -427,56 +539,16 @@
 
   <main>
     <section class="hero">
-      <div class="container grid two">
-        <div>
-          <span class="tag">AI with large language models • Knowledge search • Safety checks •
-            Quality tests • Hosted in the EU</span>
-          <h1>Ship one reliable AI workflow in <span
-              style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">30
-              days</span></h1>
-          <p>Practical, production-ready AI features for SaaS and marketplaces. We build search over
-            your documents, add safety checks and policy rules, put in place a simple test suite to
-            measure quality and cost, and deploy inside your cloud in the EU.</p>
-          <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap">
-            <a class="btn" href="https://calendly.com/ashish96puri/30min">Book intro call</a>
-            <a class="btn secondary" href="#offers">See packages</a>
-          </div>
-          <div class="kpis">
-            <div class="panel">
-              <div class="num">30 days</div>
-              <div class="muted">Pilot to prod</div>
-            </div>
-            <div class="panel">
-              <div class="num">EU hosted</div>
-              <div class="muted">Runs inside your cloud</div>
-            </div>
-            <div class="panel">
-              <div class="num">Transparent</div>
-              <div class="muted">Fixed scope & pricing</div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="panel">
-            <h3 style="margin-top:0">What you get</h3>
-            <ul>
-              <li>Search over your knowledge-base that actually works: sensible document splits,
-                strong indexing, and re-ranking so answers are accurate.</li>
-              <li>Safety checks: validate inputs and outputs, protect personal data, enforce your
-                content rules, and provide safe fallbacks.</li>
-              <li>Quality tests: a small, clear test suite and limited live rollouts with pass/fail
-                rules.</li>
-              <li>Cost control: caching, reusable instructions for the model, automatic model
-                selection, and a simple usage dashboard.</li>
-              <li>Runs in your own cloud accounts in EU data centers or on your own servers.</li>
-            </ul>
-            <div class="stack">
-              <span class="pill">Knowledge search</span><span class="pill">APIs or
-                open-source</span><span class="pill">Quality tests</span><span class="pill">Safety
-                checks</span><span class="pill">Model routing</span><span class="pill">Search
-                index</span>
-            </div>
-          </div>
+      <div class="container">
+        <h1>Plug LLMs into your product without breaking trust</h1>
+        <p class="subhead">Integration for SaaS and marketplaces. <strong>EU‑hosted</strong> data
+          paths, automated <strong>safety checks</strong>, and repeatable <strong>quality
+            tests</strong> from day one.</p>
+        <div class="cta-row">
+          <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min" rel="noopener">Book
+            intro call</a>
+          <a class="btn ghost" href="/cases/">See case studies</a>
+          <a class="btn ghost" href="/checklist/">LLM Integration Checklist (EU)</a>
         </div>
       </div>
     </section>
@@ -619,32 +691,24 @@
       </div>
     </section>
 
-    <section id="faq">
+    <section id="faq" class="faq">
       <div class="container">
         <h2>FAQ</h2>
-        <div class="faq">
-          <details>
-            <summary>Which models do you use?</summary>
-            <p>We choose the model based on your needs: speed, privacy, cost, and accuracy. This can
-              be a commercial API, an open-source model such as Llama or Mistral, or a model we run
-              on your own servers.</p>
-          </details>
-          <details>
-            <summary>Do you keep our data?</summary>
-            <p>No. The work happens inside your cloud accounts and code repositories. Any sample
-              data on my side is anonymized or synthetic and deleted after delivery.</p>
-          </details>
-          <details>
-            <summary>What does success look like?</summary>
-            <p>Before building, we agree on a few measurable targets and safety rules. The pilot
-              rolls out to a small group first and must pass tests before a wider launch.</p>
-          </details>
-          <details>
-            <summary>How do we start?</summary>
-            <p>Book a 20‑minute intro. If there’s a fit, we run the one‑week diagnostic to produce a
-              concrete plan and quote for the 30‑day pilot.</p>
-          </details>
-        </div>
+        <details>
+          <summary>Where is data processed and stored?</summary>
+          <p>Processing runs in EU regions with EU‑hosted models where feasible. We keep customer
+            data out of provider training unless you explicitly opt in.</p>
+        </details>
+        <details>
+          <summary>How do you prevent unsafe or off‑brand outputs?</summary>
+          <p>We add policy prompts, tool limits, and automated red‑team checks. Each release ships
+            with regression tests for safety and quality.</p>
+        </details>
+        <details>
+          <summary>How long to ship an MVP?</summary>
+          <p>Typically 2–4 weeks for a scoped assistant or co‑pilot. Includes evaluation harness,
+            basic analytics, and handover docs.</p>
+        </details>
       </div>
     </section>
 
@@ -699,105 +763,92 @@
             "https://www.linkedin.com/in/ashish-puri-b34475149",
             "https://github.com/ashish96puri"
           ]
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://ashish96puri.github.io/#org",
-          "name": "Ashish Puri Consulting",
-          "url": "https://ashish96puri.github.io/",
-          "founder": {
-            "@id": "https://ashish96puri.github.io/#person"
-          },
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "email": "mailto:ashish96puri@gmail.com",
-            "areaServed": "EU",
-            "availableLanguage": ["en", "de", "hi"]
+        }
+      }
+
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://ashish96puri.github.io/#org",
+      "name": "Ashish Puri — AI Consulting",
+      "url": "https://ashish96puri.github.io/",
+      "logo": "https://ashish96puri.github.io/assets/ashish.jpg",
+      "founder": {
+        "@type": "Person",
+        "name": "Ashish Puri",
+        "url": "https://ashish96puri.github.io/#person"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/ashish-puri-b34475149",
+        "https://github.com/ashish96puri"
+      ],
+      "areaServed": "EU",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "ashish96puri@gmail.com",
+        "availableLanguage": ["en", "hi", "de"]
+      }]
+    }
+
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": "https://ashish96puri.github.io/#service",
+      "serviceType": "LLM Integration for SaaS & Marketplaces",
+      "provider": {
+        "@id": "https://ashish96puri.github.io/#org"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "European Union"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "SaaS and marketplace operators"
+      },
+      "termsOfService": "https://ashish96puri.github.io/security/",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EUR",
+        "price": "120",
+        "unitText": "HOUR"
+      }
+    }
+
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+          "@type": "Question",
+          "name": "Where is data processed and stored?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Processing runs in EU regions with EU‑hosted models where feasible. Customer data is not used to train providers unless you explicitly opt in."
           }
         },
         {
-          "@type": "Service",
-          "@id": "https://ashish96puri.github.io/#service-llm",
-          "serviceType": "AI features with large language models for SaaS & Marketplaces",
-          "provider": {
-            "@id": "https://ashish96puri.github.io/#org"
-          },
-          "areaServed": "EU",
-          "offers": [{
-              "@type": "Offer",
-              "name": "AI Readiness Audit (large language models)",
-              "priceCurrency": "EUR",
-              "price": "2500",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "priceCurrency": "EUR",
-                "minPrice": 2500,
-                "maxPrice": 4000
-              }
-            },
-            {
-              "@type": "Offer",
-              "name": "Pilot in 30 days",
-              "priceCurrency": "EUR",
-              "price": "12000",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "priceCurrency": "EUR",
-                "minPrice": 12000,
-                "maxPrice": 20000
-              }
-            },
-            {
-              "@type": "Offer",
-              "name": "AI Quality & Operations",
-              "priceCurrency": "EUR",
-              "price": "2000",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "priceCurrency": "EUR",
-                "minPrice": 2000,
-                "maxPrice": 6000
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "How do you prevent unsafe or off‑brand outputs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We add policy prompts, tool limits, and automated red‑team checks. Each release ships with regression tests for safety and quality."
+          }
         },
         {
-          "@type": "FAQPage",
-          "@id": "https://ashish96puri.github.io/#faq",
-          "mainEntity": [{
-              "@type": "Question",
-              "name": "Which models do you use?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "We choose the model based on your needs: speed, privacy, cost, and accuracy. This can be a commercial API, an open-source model such as Llama or Mistral, or a model we run on your own servers."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do you keep our data?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No. The work happens inside your cloud accounts and code repositories. Any sample data on my side is anonymized or synthetic and deleted after delivery."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What does success look like?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Before building, we agree on a few measurable targets and safety rules. The pilot rolls out to a small group first and must pass tests before a wider launch."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How do we start?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Book a 20-minute intro. If there’s a fit, we run a one-week diagnostic and then a 30-day pilot."
-              }
-            }
-          ]
+          "@type": "Question",
+          "name": "How long to ship an MVP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Typically 2–4 weeks for a scoped assistant or co‑pilot, including evaluation harness, basic analytics, and handover docs."
+          }
         }
       ]
     }

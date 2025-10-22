@@ -1,0 +1,87 @@
+<!doctype html>
+}
+</script>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="/" class="brand">Ashish Puri</a>
+      <div class="nav-links">
+        <a href="/cases/" class="active">Cases</a>
+        <a href="/security/">Security</a>
+        <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Book intro call</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container case">
+    <p class="breadcrumb"><a href="/cases/">Cases</a> / Support & Docs Assistant</p>
+    <h1>Support & Docs Assistant</h1>
+    <p class="lede">Cut ticket volume and time‑to‑answer by letting users ask in their own words.
+      The assistant grounds responses in your docs, past tickets, and release notes so answers stay
+      accurate and traceable.</p>
+
+    <section>
+      <h2>Problem</h2>
+      <ul>
+        <li>Help center searches don’t match how users ask.</li>
+        <li>Agents re‑type the same answers, again and again.</li>
+        <li>Updates to docs lag behind releases, causing wrong answers.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Solution approach</h2>
+      <ol>
+        <li>Index docs, FAQs, and resolved tickets with chunking tuned to your formats.</li>
+        <li>RAG with cite‑back snippets and source links.</li>
+        <li>Safety layer: prompt rules, PII masking, abuse filters.</li>
+        <li>Quality harness: golden Q&A set, semantic match, and hallucination checks.</li>
+        <li>Analytics: deflection rate, confidence, handoff triggers to human.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Reference architecture</h2>
+      <div class="arch">
+        <img src="/assets/diagrams/support-assistant-arch.png"
+          alt="Support assistant architecture diagram" loading="lazy" />
+        <p class="caption">EU region services, retrieval store, policy guard, and evaluation
+          harness.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Outcomes</h2>
+      <ul class="metrics">
+        <li><strong>35–55% ticket deflection</strong> on how‑to questions</li>
+        <li><strong>−40% time‑to‑first‑response</strong> for remaining tickets</li>
+        <li><strong>95% source‑attributed answers</strong> with cite‑backs</li>
+      </ul>
+      <p class="note">Actual numbers depend on your docs quality and routing. We test before
+        rollout.</p>
+    </section>
+
+    <section>
+      <h2>Stack</h2>
+      <p>Host in EU; retrieval store; evaluator; safe tool layer; web widget. Works with existing
+        help centers.</p>
+    </section>
+
+    <section class="cta">
+      <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Discuss your help
+        center →</a>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Ashish Puri</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+  </script>
+</body>
+
+</html>
