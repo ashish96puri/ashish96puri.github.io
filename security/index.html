@@ -1,76 +1,130 @@
 <!doctype html>
-<li><strong>EU‑hosted</strong> processing by default. Regional endpoints where available.</li>
-<li><strong>No provider training</strong> on your data unless you explicitly opt in.</li>
-<li><strong>Minimal retention</strong>: inputs and outputs kept only for evaluation windows.</li>
-<li><strong>Access control</strong>: principle of least privilege; audit on tool use.</li>
-<li><strong>PII handling</strong>: masking where possible; never stored in prompts at rest.</li>
-</ul>
-</section>
+<html lang="en">
 
-<section>
-  <h2>DPIA checklist (starter)</h2>
-  <ul>
-    <li>Purpose and legal basis documented</li>
-    <li>Data categories and flows mapped</li>
-    <li>Risk analysis for rights and freedoms</li>
-    <li>Safeguards: technical, organizational, contractual</li>
-    <li>Residual risk and sign‑off</li>
-  </ul>
-</section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security & Hosting | Ashish Puri</title>
+  <meta name="description"
+    content="Security, privacy, and hosting options for LLM features. EU-hosted choices, data controls, and practical compliance." />
+  <link rel="canonical" href="https://ashish96puri.github.io/security/" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [{
+        "@type": "WebPage",
+        "@id": "https://ashish96puri.github.io/security/#webpage",
+        "url": "https://ashish96puri.github.io/security/",
+        "name": "Security & Hosting",
+        "isPartOf": {
+          "@id": "https://ashish96puri.github.io/#website"
+        },
+        "about": [{
+            "@type": "Thing",
+            "name": "EU Hosting"
+          },
+          {
+            "@type": "Thing",
+            "name": "PII Redaction"
+          },
+          {
+            "@type": "Thing",
+            "name": "Model Safety"
+          },
+          {
+            "@type": "Thing",
+            "name": "Quality Tests"
+          }
+        ],
+        "dateModified": "2025-10-22"
+      }]
+    }
 
-<section>
-  <h2>Data flow diagram</h2>
-  <figure class="dfd">
-    <!-- Simple inline SVG placeholder; replace boxes as needed -->
-    <svg viewBox="0 0 800 320" role="img" aria-label="Data flow diagram">
-      <rect x="20" y="40" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
-      <text x="100" y="75" text-anchor="middle" font-size="14">User / App</text>
+  </script>
 
-      <rect x="220" y="40" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
-      <text x="300" y="75" text-anchor="middle" font-size="14">Policy Guard</text>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
 
-      <rect x="420" y="40" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
-      <text x="500" y="75" text-anchor="middle" font-size="14">LLM (EU)</text>
+<body>
 
-      <rect x="620" y="40" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
-      <text x="700" y="75" text-anchor="middle" font-size="14">Evaluator</text>
+  <!-- header -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <a href="https://www.linkedin.com/in/ashish-puri-b34475149" rel="me noopener"
+          target="_blank">Ashish Puri</a>
+      </div>
+      <nav class="navlinks">
+        <a href="/">Home</a>
+        <a href="/cases/">Cases</a>
+        <a class="active" href="/security/">Security</a>
+        <a href="/checklist/">Checklist</a>
+        <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank"
+          rel="noopener">Book intro call</a>
+      </nav>
+    </div>
+  </header>
 
-      <rect x="220" y="180" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
-      <text x="300" y="215" text-anchor="middle" font-size="14">Retrieval Store</text>
+  <section class="hero">
+    <div class="container">
+      <span class="badge"><span class="dot"></span> EU-hosted options • Safety checks • Quality
+        tests</span>
+      <h1>Security & hosting</h1>
+      <p class="lead wide">Practical controls that pass audits and don’t strangle velocity.</p>
+    </div>
+  </section>
 
-      <rect x="420" y="180" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
-      <text x="500" y="215" text-anchor="middle" font-size="14">Audit Log</text>
+  <section class="section">
+    <div class="container grid cols-3">
+      <div class="card">
+        <h3>EU-hosted options</h3>
+        <p>Deploy in the EU where required. Keep data in region with explicit retention settings.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Data handling</h3>
+        <p>PII detection and masking, least privilege access, configurable logs with redaction.</p>
+      </div>
+      <div class="card">
+        <h3>Model safety</h3>
+        <p>Guardrails for prohibited content, protected categories, and risky promises.</p>
+      </div>
+      <div class="card">
+        <h3>Quality tests</h3>
+        <p>Golden sets, regression gates, and eval dashboards before and after launch.</p>
+      </div>
+      <div class="card">
+        <h3>Observability</h3>
+        <p>Prompt and output tracing, feedback capture, incident playbooks.</p>
+      </div>
+      <div class="card">
+        <h3>Readiness</h3>
+        <p>Align with SOC2/ISO 27001 controls. Vendor review support if needed.</p>
+      </div>
+    </div>
+  </section>
 
-      <!-- arrows -->
-      <defs>
-        <marker id="arrow" markerWidth="10" markerHeight="10" refx="6" refy="3" orient="auto"
-          markerUnits="strokeWidth">
-          <path d="M0,0 L0,6 L9,3 z" fill="#111" />
-        </marker>
-      </defs>
-      <line x1="180" y1="70" x2="220" y2="70" stroke="#111" marker-end="url(#arrow)" />
-      <line x1="380" y1="70" x2="420" y2="70" stroke="#111" marker-end="url(#arrow)" />
-      <line x1="580" y1="70" x2="620" y2="70" stroke="#111" marker-end="url(#arrow)" />
-      <line x1="300" y1="100" x2="300" y2="180" stroke="#111" marker-end="url(#arrow)" />
-      <line x1="500" y1="100" x2="500" y2="180" stroke="#111" marker-end="url(#arrow)" />
-    </svg>
-    <figcaption>EU endpoints, retrieval store, and evaluator in your chosen region.</figcaption>
-  </figure>
-</section>
+  <section class="section center">
+    <div class="container">
+      <p class="lead">Want a short security readout for your use case?</p>
+      <a class="btn btn-cta" href="https://calendly.com/ashish96puri/30min" target="_blank">Request
+        a 20-min review</a>
+    </div>
+  </section>
 
-<section class="cta">
-  <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Review your DPIA together
-    →</a>
-</section>
-</main>
+  <!-- footer -->
+  <footer class="footer">
+    <div class="container row">
+      <div class="small">© <span id="y"></span> Ashish Puri. EU-hosted options. Safety checks.
+        Quality tests.</div>
+      <div class="small"><a class="underline" href="/sitemap.xml">sitemap</a></div>
+    </div>
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear()
 
-<footer class="site-footer container">
-  <p>© <span id="year"></span> Ashish Puri</p>
-</footer>
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </footer>
 
-</script>
 </body>
 
 </html>
