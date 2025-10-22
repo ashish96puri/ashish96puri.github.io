@@ -66,6 +66,7 @@
   .card h3{margin-bottom:4px}
   .kv{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
   .kv .pill{padding:6px 10px; border-radius:999px; background:#f3f4f6; font-size:13px}
+  .kv .pill:hover { filter: brightness(0.98); transform: translateY(-1px); transition: all .15s ease; }
 
   /* ---------- Two-column content ---------- */
   .twocol{display:grid; gap:24px}
@@ -105,3 +106,21 @@
   .center .wide {
     text-wrap: pretty;   /* harmless if unsupported */
   }
+  /* Previous experience */
+.experience{ margin-top: 10px; }
+
+.logo-row{
+  list-style:none; padding:0; margin:10px 0 0;
+  display:flex; gap:22px; align-items:center; flex-wrap:wrap;
+}
+.logo-row li{display:flex; align-items:center}
+.logo-row img{
+  height:26px; max-width:160px;
+  filter: grayscale(100%) contrast(1.05) opacity(.85);
+  transition: filter .2s ease, transform .1s ease, opacity .2s ease;
+}
+.logo-row img:hover{ filter:none; opacity:1; transform: translateY(-1px); }
+
+@media (min-width: 900px){
+  .logo-row img{ height:28px; }
+}
