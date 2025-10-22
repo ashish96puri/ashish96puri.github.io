@@ -1,0 +1,76 @@
+<!doctype html>
+<li><strong>EU‑hosted</strong> processing by default. Regional endpoints where available.</li>
+<li><strong>No provider training</strong> on your data unless you explicitly opt in.</li>
+<li><strong>Minimal retention</strong>: inputs and outputs kept only for evaluation windows.</li>
+<li><strong>Access control</strong>: principle of least privilege; audit on tool use.</li>
+<li><strong>PII handling</strong>: masking where possible; never stored in prompts at rest.</li>
+</ul>
+</section>
+
+<section>
+  <h2>DPIA checklist (starter)</h2>
+  <ul>
+    <li>Purpose and legal basis documented</li>
+    <li>Data categories and flows mapped</li>
+    <li>Risk analysis for rights and freedoms</li>
+    <li>Safeguards: technical, organizational, contractual</li>
+    <li>Residual risk and sign‑off</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Data flow diagram</h2>
+  <figure class="dfd">
+    <!-- Simple inline SVG placeholder; replace boxes as needed -->
+    <svg viewBox="0 0 800 320" role="img" aria-label="Data flow diagram">
+      <rect x="20" y="40" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
+      <text x="100" y="75" text-anchor="middle" font-size="14">User / App</text>
+
+      <rect x="220" y="40" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
+      <text x="300" y="75" text-anchor="middle" font-size="14">Policy Guard</text>
+
+      <rect x="420" y="40" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
+      <text x="500" y="75" text-anchor="middle" font-size="14">LLM (EU)</text>
+
+      <rect x="620" y="40" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
+      <text x="700" y="75" text-anchor="middle" font-size="14">Evaluator</text>
+
+      <rect x="220" y="180" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
+      <text x="300" y="215" text-anchor="middle" font-size="14">Retrieval Store</text>
+
+      <rect x="420" y="180" width="160" height="60" rx="8" fill="#f3f3f3" stroke="#111" />
+      <text x="500" y="215" text-anchor="middle" font-size="14">Audit Log</text>
+
+      <!-- arrows -->
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refx="6" refy="3" orient="auto"
+          markerUnits="strokeWidth">
+          <path d="M0,0 L0,6 L9,3 z" fill="#111" />
+        </marker>
+      </defs>
+      <line x1="180" y1="70" x2="220" y2="70" stroke="#111" marker-end="url(#arrow)" />
+      <line x1="380" y1="70" x2="420" y2="70" stroke="#111" marker-end="url(#arrow)" />
+      <line x1="580" y1="70" x2="620" y2="70" stroke="#111" marker-end="url(#arrow)" />
+      <line x1="300" y1="100" x2="300" y2="180" stroke="#111" marker-end="url(#arrow)" />
+      <line x1="500" y1="100" x2="500" y2="180" stroke="#111" marker-end="url(#arrow)" />
+    </svg>
+    <figcaption>EU endpoints, retrieval store, and evaluator in your chosen region.</figcaption>
+  </figure>
+</section>
+
+<section class="cta">
+  <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Review your DPIA together
+    →</a>
+</section>
+</main>
+
+<footer class="site-footer container">
+  <p>© <span id="year"></span> Ashish Puri</p>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+</body>
+
+</html>

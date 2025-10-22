@@ -1,0 +1,75 @@
+<!doctype html>
+<div class="nav-links">
+  <a href="/cases/" class="active">Cases</a>
+  <a href="/security/">Security</a>
+  <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Book intro call</a>
+</div>
+</nav>
+</header>
+
+<main class="container case">
+  <p class="breadcrumb"><a href="/cases/">Cases</a> / Ops Co‑pilot</p>
+  <h1>Ops Co‑pilot</h1>
+  <p class="lede">Triage, route, and resolve faster. The co‑pilot summarizes context, proposes safe
+    actions, and keeps an audit trail of every step.</p>
+
+  <section>
+    <h2>Problem</h2>
+    <ul>
+      <li>Ops dashboards are noisy. Important work hides in queues.</li>
+      <li>Manual checks waste time and introduce inconsistency.</li>
+      <li>Compliance requires auditable decisions.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Solution approach</h2>
+    <ol>
+      <li>Ingest cases across tools. Normalize events and entities.</li>
+      <li>LLM suggests next actions with confidence and rationale.</li>
+      <li>Guardrails enforce policy, SLAs, and role permissions.</li>
+      <li>One‑click bulk actions with preview and rollbacks.</li>
+      <li>Dashboards: throughput, stuck cases, exception reasons.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Reference architecture</h2>
+    <div class="arch">
+      <img src="/assets/diagrams/ops-copilot-arch.png" alt="Ops co‑pilot architecture diagram"
+        loading="lazy" />
+      <p class="caption">Ingress, policy guard, action executor, and audit log.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Outcomes</h2>
+    <ul class="metrics">
+      <li><strong>−25–40% handle time</strong> on routine cases</li>
+      <li><strong>+15–25% SLA adherence</strong> due to early triage</li>
+      <li><strong>100% action history</strong> with reason codes</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Stack</h2>
+    <p>Event bus, policy engine, safe tool layer, evaluator, and audit store. EU deployment by
+      default.</p>
+  </section>
+
+  <section class="cta">
+    <a class="btn cta-book" href="https://calendly.com/ashish96puri/30min">Talk about your ops
+      queues →</a>
+  </section>
+</main>
+
+<footer class="site-footer container">
+  <p>© <span id="year"></span> Ashish Puri</p>
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+</body>
+
+</html>
